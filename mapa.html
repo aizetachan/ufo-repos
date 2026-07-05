@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de avistamientos — EXPEDIENTE UMBRA</title>
+  <meta name="description" content="Los casos del archivo sobre un mapa: avistamientos OVNI documentados en España y el mundo.">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛸</text></svg>">
+</head>
+<body data-pagina="mapa" data-modo="creyente">
+
+  <header class="cabecera">
+    <div class="cabecera-superior">
+      <div class="marca">
+        <a href="index.html">
+          <div class="titulo-sitio">EXPEDIENTE <span class="u">UMBRA</span></div>
+          <div class="lema">Archivo desclasificado · La verdad está en los documentos</div>
+        </a>
+      </div>
+      <div class="modo" title="Cambia entre las dos lecturas de cada caso">
+        <span class="etiqueta-modo etiqueta-creyente">Creyente</span>
+        <div class="interruptor" id="interruptor-modo" role="switch" aria-label="Cambiar entre modo creyente y modo escéptico"></div>
+        <span class="etiqueta-modo etiqueta-esceptico">Escéptico</span>
+      </div>
+    </div>
+    <nav class="nav-sitio" id="nav-sitio"></nav>
+  </header>
+
+  <main class="contenedor">
+
+    <div class="seccion-titulo">
+      <span class="cursor">SALA DE SITUACIÓN — MAPA DE CASOS</span>
+      <span class="sello verde">18 posiciones</span>
+    </div>
+
+    <p style="max-width:760px;margin-bottom:16px;font-size:13px">
+      Cada marcador es un caso del archivo. <span style="color:var(--rojo)">Rojo</span>: sin explicar.
+      <span style="color:var(--fosforo)">Verde</span>: disputado o explicado. Pulsa cualquier marcador
+      para abrir su expediente.
+    </p>
+
+    <div id="mapa"></div>
+
+  </main>
+
+  <footer class="pie">
+    <p class="contador-encubrimiento">DÍAS DESDE EL ÚLTIMO ENCUBRIMIENTO: 0</p>
+    <p class="nota-honesta">Las coordenadas son aproximadas al lugar del avistamiento documentado.</p>
+  </footer>
+
+  <script src="assets/vendor/leaflet/leaflet.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

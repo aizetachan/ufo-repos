@@ -1,0 +1,22 @@
+{
+  "terminos": [
+    { "termino": "UAP", "definicion": "Fenómeno Anómalo No Identificado (Unidentified Anomalous Phenomena). El término oficial que sustituyó a 'UFO/OVNI' en el lenguaje gubernamental de EE.UU. desde 2021, para quitarse de encima el estigma cultural de la palabra 'ovni'." },
+    { "termino": "OVNI", "definicion": "Objeto Volador No Identificado. Significa exactamente eso: no identificado. No significa 'nave extraterrestre' — esa es la hipótesis, no la observación." },
+    { "termino": "FOIA", "definicion": "Freedom of Information Act: la ley estadounidense de acceso a la información que obliga a las agencias a entregar documentos si un ciudadano los pide (con excepciones de seguridad). Gracias a ella son públicos los archivos de la CIA o los vídeos de la Navy." },
+    { "termino": "Blue Book", "definicion": "Project Blue Book: el programa oficial de la Fuerza Aérea de EE.UU. que investigó 12.618 avistamientos entre 1947 y 1969. Cerró concluyendo que nada amenazaba la seguridad nacional; 701 casos quedaron sin identificar." },
+    { "termino": "MOA", "definicion": "Mando Operativo Aéreo (después MACOM, Mando Aéreo de Combate): la unidad del Ejército del Aire español cuya sección de Inteligencia custodiaba e investigó los expedientes OVNI, y que ejecutó la desclasificación de 1992-1999." },
+    { "termino": "desclasificación", "definicion": "Proceso administrativo por el que documentos secretos pasan a ser públicos. España desclasificó su archivo OVNI completo entre 1992 y 1999 — uno de los primeros países del mundo en hacerlo." },
+    { "termino": "GEIPAN", "definicion": "Grupo de Estudios e Información sobre Fenómenos Aeroespaciales No identificados: organismo de la agencia espacial francesa (CNES), activo desde 1977. Clasifica los casos de A (identificado) a D (no identificado tras investigación). Solo el 3,1% acaba en D." },
+    { "termino": "categoría D", "definicion": "En la clasificación del GEIPAN francés, un caso que sigue sin explicación después de ser investigado con datos suficientes. Es la categoría más rara: ~3% de los casos." },
+    { "termino": "AARO", "definicion": "All-domain Anomaly Resolution Office: la oficina permanente del Pentágono para fenómenos anómalos, creada en 2022. Publica en aaro.mil los vídeos oficiales y sus informes de resolución de casos." },
+    { "termino": "DIA", "definicion": "Defense Intelligence Agency: la agencia de inteligencia militar de EE.UU. Autora del memorando sobre el caso de los F-4 de Teherán (1976)." },
+    { "termino": "FLIR", "definicion": "Forward-Looking InfraRed: cámara de infrarrojos montada en aviones militares. 'FLIR1' es el nombre del vídeo oficial del caso Nimitz/Tic-Tac." },
+    { "termino": "bólido", "definicion": "Meteoro muy brillante al entrar en la atmósfera. Responsable de un porcentaje enorme de reportes OVNI nocturnos: rápido, silencioso, fragmentable y visible a cientos de kilómetros." },
+    { "termino": "rayo globular", "definicion": "Supuesto fenómeno eléctrico atmosférico en forma de esfera luminosa. Tiene gracia: se ha usado como 'explicación oficial' de casos OVNI siendo él mismo un fenómeno no plenamente demostrado." },
+    { "termino": "hipnosis regresiva", "definicion": "Técnica que pretende 'recuperar' recuerdos ocultos. La psicología experimental ha demostrado que no recupera: fabrica. Es el origen de la mayoría de relatos de abducción, empezando por el caso Hill." },
+    { "termino": "ola", "definicion": "Periodo de concentración anormal de reportes en una zona (la ola española de 1968-69, la belga de 1989-90). Los escépticos las leen como fenómenos sociales; los creyentes, como campañas de actividad real." },
+    { "termino": "contactado", "definicion": "Figura de los años 50: persona que decía mantener contacto amistoso y repetido con tripulantes de platillos (George Adamski el más famoso). Sus relatos crearon el arquetipo del alienígena 'Nórdico'." },
+    { "termino": "efecto Starlink", "definicion": "Desde 2019, los 'trenes' de satélites Starlink recién lanzados —una fila de puntos de luz avanzando en silencio— se han convertido en la primera causa moderna de reportes OVNI nocturnos." },
+    { "termino": "SOBEPS", "definicion": "Sociedad Belga de Estudio de Fenómenos Espaciales: la asociación civil que investigó la ola belga de 1989-90 en colaboración pública con la Fuerza Aérea — una rareza histórica." }
+  ]
+}

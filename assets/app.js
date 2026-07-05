@@ -278,25 +278,42 @@ async function iniciarPortada() {
       .join("");
   }
 
-  // Listado con filtros
+  // Listado con filtros + buscador
   const contLista = document.getElementById("lista-casos");
+  const buscador = document.getElementById("buscador");
   const orden = [...casos].sort((a, b) => a.fecha.localeCompare(b.fecha));
-  const pintar = (filtro) => {
+  let filtroActual = "todos";
+
+  const pintar = () => {
     let visibles = orden;
-    if (filtro === "espana") visibles = orden.filter((c) => c.pais === "España");
-    if (filtro === "internacional") visibles = orden.filter((c) => c.pais !== "España");
-    if (filtro === "sin_explicar") visibles = orden.filter((c) => c.estado === "sin_explicar");
-    if (filtro === "disputado") visibles = orden.filter((c) => c.estado === "disputado");
-    contLista.innerHTML = visibles.map(tarjetaCaso).join("");
+    if (filtroActual === "espana") visibles = visibles.filter((c) => c.pais === "España");
+    if (filtroActual === "internacional") visibles = visibles.filter((c) => c.pais !== "España");
+    if (filtroActual === "sin_explicar") visibles = visibles.filter((c) => c.estado === "sin_explicar");
+    if (filtroActual === "disputado") visibles = visibles.filter((c) => c.estado === "disputado");
+    const q = (buscador?.value || "").trim().toLowerCase();
+    if (q) {
+      visibles = visibles.filter((c) =>
+        [c.titulo, c.lugar, c.pais, c.resumen, c.gancho, c.fechaTexto, ...(c.tipo || [])]
+          .join(" ")
+          .toLowerCase()
+          .includes(q)
+      );
+    }
+    contLista.innerHTML =
+      visibles.map(tarjetaCaso).join("") ||
+      '<p class="sin-resultados">Ningún expediente coincide. O eso quieren que creas — prueba otros términos.</p>';
   };
-  pintar("todos");
+
+  pintar();
   document.querySelectorAll(".filtros button").forEach((btn) => {
     btn.addEventListener("click", () => {
       document.querySelectorAll(".filtros button").forEach((b) => b.classList.remove("activo"));
       btn.classList.add("activo");
-      pintar(btn.dataset.filtro);
+      filtroActual = btn.dataset.filtro;
+      pintar();
     });
   });
+  buscador?.addEventListener("input", pintar);
 }
 
 /* ---------- Ficha de expediente ---------- */
@@ -375,6 +392,138 @@ async function iniciarExpediente() {
       <h2>Casos relacionados</h2>
       <div class="relacionados-lista">${relacionados}</div>
     </div>`;
+
+  marcarTerminos(document.getElementById("expediente"));
+}
+
+/* ---------- Glosario ---------- */
+let _glosario = null;
+async function cargarGlosario() {
+  if (_glosario) return _glosario;
+  const resp = await fetch("data/glosario.json");
+  _glosario = (await resp.json()).terminos;
+  return _glosario;
+}
+
+async function iniciarGlosario() {
+  const terminos = await cargarGlosario();
+  document.getElementById("glosario").innerHTML = terminos
+    .map((t) => `<div class="entrada-glosario"><b>${esc(t.termino)}</b> — ${esc(t.definicion)}</div>`)
+    .join("");
+}
+
+/* Subraya términos del glosario (primera aparición por bloque) en la ficha */
+async function marcarTerminos(contenedor) {
+  const terminos = await cargarGlosario();
+  contenedor.querySelectorAll(".bloque p, .version p").forEach((p) => {
+    let html = p.innerHTML;
+    for (const t of terminos) {
+      const re = new RegExp(`\\b(${t.termino.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})\\b`, "i");
+      if (re.test(html)) {
+        const def = t.definicion.replace(/"/g, "&quot;");
+        html = html.replace(re, `<span class="termino" data-def="${def}">$1</span>`);
+      }
+    }
+    p.innerHTML = html;
+  });
+}
+
+/* ---------- Mapa ---------- */
+async function iniciarMapa() {
+  const casos = await cargarCasos();
+  const mapa = L.map("mapa", { worldCopyJump: true }).setView([38, -20], 3);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: "abcd",
+    maxZoom: 12,
+  }).addTo(mapa);
+
+  for (const c of casos) {
+    if (!c.coordenadas) continue;
+    const rojo = c.estado === "sin_explicar";
+    const icono = L.divIcon({
+      className: "marcador-ovni" + (rojo ? " rojo" : ""),
+      iconSize: rojo ? [16, 16] : [12, 12],
+    });
+    L.marker(c.coordenadas, { icon: icono })
+      .addTo(mapa)
+      .bindPopup(
+        `<b style="text-transform:uppercase;letter-spacing:1px">${esc(c.titulo)}</b><br>
+         <span style="font-size:11px">${esc(c.lugar)} · ${esc(c.fechaTexto)}</span><br>
+         <span style="font-size:10px;letter-spacing:1px;color:${rojo ? "#ff3b30" : "#e8b23a"}">${ESTADOS[c.estado]}</span><br>
+         <a href="expediente.html?id=${encodeURIComponent(c.id)}">▸ Abrir expediente</a>`
+      );
+  }
+}
+
+/* ---------- Formulario de reporte ---------- */
+function iniciarReportar() {
+  const form = document.getElementById("formulario-reporte");
+  if (!form) return;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const descartes = form.querySelectorAll('.lista-descartes input:checked').length;
+    const reporte = {
+      fecha: document.getElementById("campo-fecha").value,
+      lugar: document.getElementById("campo-lugar").value,
+      duracion: document.getElementById("campo-duracion").value,
+      descripcion: document.getElementById("campo-descripcion").value,
+      descartes,
+      registrado: new Date().toISOString(),
+    };
+    const guardados = JSON.parse(localStorage.getItem("reportes") || "[]");
+    guardados.push(reporte);
+    localStorage.setItem("reportes", JSON.stringify(guardados));
+
+    const ref = "UMBRA-" + String(Date.now()).slice(-6);
+    const valoracion =
+      descartes >= 4
+        ? "Valoración preliminar: TESTIGO METÓDICO. Un reporte con este nivel de descartes es exactamente lo que un investigador quiere leer."
+        : descartes >= 2
+        ? "Valoración preliminar: ACEPTABLE. La próxima vez, dedica dos minutos a Flightradar y a comprobar Venus: eliminan la mitad de los sustos."
+        : "Valoración preliminar: SIN FILTRAR. Casi seguro que era un avión, Venus o Starlink. Pero guardamos el registro — por si acaso.";
+
+    form.style.display = "none";
+    const resp = document.getElementById("respuesta-reporte");
+    resp.style.display = "block";
+    resp.innerHTML = `
+      <p class="ref-reporte">■ TRANSMISIÓN COMPLETADA — REFERENCIA ${ref}</p>
+      <p>Su reporte ha sido registrado en el archivo local (${esc(reporte.lugar)}, ${esc(reporte.fecha)}).</p>
+      <p>${valoracion}</p>
+      <p style="color:var(--tinta-tenue);font-size:12px">No hable de esto con nadie. O mejor sí: la ciencia avanza compartiendo datos.</p>`;
+    resp.scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+/* ---------- Código Konami: el expediente prohibido ---------- */
+function iniciarKonami() {
+  const secuencia = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+  let pos = 0;
+  document.addEventListener("keydown", (e) => {
+    pos = e.key === secuencia[pos] ? pos + 1 : e.key === secuencia[0] ? 1 : 0;
+    if (pos !== secuencia.length) return;
+    pos = 0;
+    if (document.getElementById("expediente-prohibido")) return;
+    const div = document.createElement("div");
+    div.id = "expediente-prohibido";
+    div.innerHTML = `
+      <div class="documento-prohibido">
+        <span class="sello">Nivel Ω — No distribuir</span>
+        <h2 style="margin:14px 0;letter-spacing:3px">EXPEDIENTE UMBRA-0</h2>
+        <p>ASUNTO: El visitante que encontró esta página.</p>
+        <p>El sujeto ha introducido una secuencia de acceso que solo conocen
+        <span class="censurado">los que crecieron con una consola</span>. Perfil: curiosidad
+        por encima de la media, tendencia a <span class="censurado">leer hasta el final</span>
+        y resistencia notable a aceptar la primera explicación.</p>
+        <p>RECOMENDACIÓN: exactamente el tipo de persona que este archivo necesita.
+        Que revise los documentos originales. Que dude de nosotros también.
+        Que <span class="censurado">comparta la página</span>.</p>
+        <p style="color:var(--tinta-tenue);font-size:11px">No hay más secretos aquí. Los de verdad están en los enlaces de la Sala de Archivos.</p>
+        <span class="cerrar-prohibido">Cerrar y no decir nada</span>
+      </div>`;
+    document.body.appendChild(div);
+    div.querySelector(".cerrar-prohibido").addEventListener("click", () => div.remove());
+  });
 }
 
 /* ---------- Arranque ---------- */
@@ -388,4 +537,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (pagina === "bestiario") iniciarBestiario();
   if (pagina === "cronologia") iniciarCronologia();
   if (pagina === "archivo-espanol") iniciarArchivoEspanol();
+  if (pagina === "glosario") iniciarGlosario();
+  if (pagina === "mapa") iniciarMapa();
+  if (pagina === "reportar") iniciarReportar();
+  iniciarKonami();
 });

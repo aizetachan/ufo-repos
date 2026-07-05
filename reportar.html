@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportar avistamiento — EXPEDIENTE UMBRA</title>
+  <meta name="description" content="Reporta tu avistamiento OVNI. Antes, pasa el control de descartes: la mayoría de los ovnis tienen nombre y apellidos.">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛸</text></svg>">
+</head>
+<body data-pagina="reportar" data-modo="creyente">
+
+  <header class="cabecera">
+    <div class="cabecera-superior">
+      <div class="marca">
+        <a href="index.html">
+          <div class="titulo-sitio">EXPEDIENTE <span class="u">UMBRA</span></div>
+          <div class="lema">Archivo desclasificado · La verdad está en los documentos</div>
+        </a>
+      </div>
+      <div class="modo" title="Cambia entre las dos lecturas de cada caso">
+        <span class="etiqueta-modo etiqueta-creyente">Creyente</span>
+        <div class="interruptor" id="interruptor-modo" role="switch" aria-label="Cambiar entre modo creyente y modo escéptico"></div>
+        <span class="etiqueta-modo etiqueta-esceptico">Escéptico</span>
+      </div>
+    </div>
+    <nav class="nav-sitio" id="nav-sitio"></nav>
+  </header>
+
+  <main class="contenedor">
+
+    <div class="seccion-titulo">
+      <span class="cursor">CANAL DE REPORTE CIUDADANO</span>
+      <span class="sello">Confidencial</span>
+    </div>
+
+    <form class="formulario-reporte" id="formulario-reporte">
+      <p style="font-size:13px;max-width:720px">
+        ¿Has visto algo que no sabes explicar? Cuéntanoslo. Pero antes, el
+        <b>control de descartes</b>: el 95% de los avistamientos tienen explicación
+        con nombre y apellidos. Marca lo que ya hayas comprobado — cada casilla que marques
+        hace tu reporte más valioso.
+      </p>
+
+      <label for="campo-fecha">Fecha del avistamiento</label>
+      <input type="date" id="campo-fecha" required>
+
+      <label for="campo-lugar">Lugar (municipio, provincia)</label>
+      <input type="text" id="campo-lugar" placeholder="p. ej. Manises, Valencia" required>
+
+      <label for="campo-duracion">Duración aproximada</label>
+      <select id="campo-duracion">
+        <option>Menos de 10 segundos</option>
+        <option>Entre 10 segundos y 1 minuto</option>
+        <option>Entre 1 y 5 minutos</option>
+        <option>Más de 5 minutos</option>
+      </select>
+
+      <label>Control de descartes (sé honesto: esto es lo que haría un investigador)</label>
+      <div class="lista-descartes">
+        <label><input type="checkbox"> He comprobado que no era un avión (webs tipo Flightradar24 muestran el tráfico aéreo en tiempo real)</label>
+        <label><input type="checkbox"> He comprobado que no era un tren de satélites Starlink (fila de puntos en silencio — hay webs de seguimiento)</label>
+        <label><input type="checkbox"> He comprobado que no era Venus o Júpiter (los planetas brillantes son la causa nº 1 histórica de reportes)</label>
+        <label><input type="checkbox"> He descartado drones (luces parpadeantes de colores, movimiento errático, zumbido si está cerca)</label>
+        <label><input type="checkbox"> He descartado bengalas, lanzamientos de cohetes o maniobras militares anunciadas</label>
+        <label><input type="checkbox"> Era otra cosa. Por eso estoy aquí.</label>
+      </div>
+
+      <label for="campo-descripcion">Descripción de los hechos (qué viste, forma, color, sonido, movimiento, otros testigos)</label>
+      <textarea id="campo-descripcion" placeholder="Relata solo lo que observaste, sin interpretación. 'Una luz blanca que se movía en zigzag' es mejor que 'una nave'." required></textarea>
+
+      <button type="submit" class="boton-enviar">Transmitir reporte</button>
+
+      <p style="font-size:11px;color:var(--tinta-tenue);margin-top:14px">
+        AVISO DE TRANSPARENCIA — Este canal está en fase de calibración: tu reporte se guarda
+        únicamente en tu navegador y no se transmite a ningún servidor (todavía). Nadie va a
+        llamar a tu puerta. Probablemente.
+      </p>
+    </form>
+
+    <div id="respuesta-reporte" style="display:none" class="respuesta-reporte"></div>
+
+  </main>
+
+  <footer class="pie">
+    <p class="contador-encubrimiento">DÍAS DESDE EL ÚLTIMO ENCUBRIMIENTO: 0</p>
+    <p class="nota-honesta">Un buen testigo no es el que más vio: es el que mejor descartó.</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

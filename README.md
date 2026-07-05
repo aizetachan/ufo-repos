@@ -13,13 +13,25 @@ Ejército del Aire español, Project Blue Book, AARO, National Archives UK, GEIP
 ## Estructura
 
 ```
-index.html          Portada: expediente del día, ruta "Empieza aquí", listado con filtros
-expediente.html     Ficha de caso (lee ?id= y renderiza desde el JSON)
-archivos.html       Sala de archivos: enlaces verificados a las fuentes oficiales
-data/casos.json     Todos los casos (el esquema está documentado dentro del propio JSON)
-assets/style.css    Estética dossier/X-Files
-assets/app.js       Lógica: carga de datos, toggle de modo, render, intro de terminal
+index.html              Portada: expediente del día, ruta "Empieza aquí", buscador y listado con filtros
+expediente.html         Ficha de caso (lee ?id= y renderiza desde el JSON, con tooltips de glosario)
+cronologia.html         Línea de tiempo 1947→hoy en doble carril (casos / historia)
+bestiario.html          Guía de arquetipos: qué reporta la gente y de dónde sale cada figura
+mapa.html               Los casos sobre un mapa oscuro (Leaflet autoalojado en assets/vendor/)
+archivo-espanol.html    Los 80 expedientes desclasificados navegables por año
+archivos.html           Sala de archivos: enlaces verificados a las fuentes oficiales
+glosario.html           Glosario del investigador
+reportar.html           Formulario de reporte con control de descartes (guarda solo en local)
+data/casos.json         Los casos con ficha completa (esquema documentado dentro del JSON)
+data/archivo-espanol.json  Los 80 expedientes con enlace al documento original
+data/cronologia.json    Hitos de la cronología
+data/bestiario.json     Entidades del bestiario
+data/glosario.json      Términos y definiciones
+assets/style.css        Estética dossier/X-Files
+assets/app.js           Toda la lógica (sin frameworks)
 ```
+
+Extra: código Konami (↑↑↓↓←→←→BA) en cualquier página.
 
 ## Añadir un caso
 
