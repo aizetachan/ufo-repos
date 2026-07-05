@@ -54,11 +54,31 @@ python3 -m http.server 8080
 
 (Abrir `index.html` como fichero no funciona: el `fetch` del JSON necesita HTTP.)
 
-## Publicar en GitHub Pages
+## Despliegue: Firebase Hosting (automático con GitHub Actions)
 
-1. Fusiona esta rama en `main`.
-2. En GitHub: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**.
-3. La web quedará en `https://<usuario>.github.io/<repo>/`.
+El repo ya incluye `firebase.json`, `.firebaserc` y el workflow
+`.github/workflows/firebase-deploy.yml`. Cada push a `main` despliega a
+producción; cada pull request genera una URL de preview temporal.
+
+Configuración inicial (una sola vez):
+
+1. **Crear el proyecto**: entra en [console.firebase.google.com](https://console.firebase.google.com)
+   → *Añadir proyecto* → nombre `expediente-umbra` (si Google te sugiere otro ID
+   porque ese está cogido, apunta el ID final). No hace falta activar Analytics.
+2. **Generar la credencial de despliegue**: en la consola del proyecto →
+   ⚙️ *Configuración del proyecto* → *Cuentas de servicio* →
+   *Generar nueva clave privada* (descarga un JSON).
+3. **Añadir el secreto en GitHub**: en el repo → *Settings → Secrets and
+   variables → Actions → New repository secret* → nombre
+   `FIREBASE_SERVICE_ACCOUNT`, valor: el contenido íntegro del JSON descargado.
+   (Borra el JSON de tu disco después.)
+
+Si el ID final del proyecto no es `expediente-umbra`, actualiza ese valor en
+`.firebaserc` y en los dos `projectId` del workflow.
+
+La web quedará en `https://<project-id>.web.app`.
+
+Alternativa manual: `npm i -g firebase-tools && firebase login && firebase deploy`.
 
 ## Fuentes y verificación
 
