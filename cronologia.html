@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expediente — EXPEDIENTE UMBRA</title>
+  <title>Cronología — EXPEDIENTE UMBRA</title>
+  <meta name="description" content="La historia del fenómeno OVNI/UAP de 1947 a hoy: los casos documentados y la historia política y cultural, en una doble línea de tiempo.">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛸</text></svg>">
 </head>
-<body data-pagina="expediente" data-modo="creyente">
+<body data-pagina="cronologia" data-modo="creyente">
 
   <header class="cabecera">
     <div class="cabecera-superior">
@@ -27,15 +28,30 @@
   </header>
 
   <main class="contenedor">
-    <div id="expediente"></div>
+
+    <div class="seccion-titulo">
+      <span class="cursor">CRONOLOGÍA DEL FENÓMENO — 1947 → HOY</span>
+      <span class="sello verde">Doble carril</span>
+    </div>
+
+    <p style="max-width:760px;margin-bottom:10px">
+      Ochenta años en una línea de tiempo con dos carriles: a un lado los
+      <span style="color:var(--fosforo)">casos</span> (enlazan a su expediente),
+      al otro la <span style="color:var(--ambar)">historia</span> — los programas oficiales,
+      las desclasificaciones y los giros culturales que explican por qué el fenómeno se cuenta como se cuenta.
+    </p>
+    <div class="leyenda-cronologia">
+      <span class="pastilla pastilla-caso">● CASO</span>
+      <span class="pastilla pastilla-historia">● HISTORIA</span>
+    </div>
+
+    <div id="cronologia" class="cronologia"></div>
+
   </main>
 
   <footer class="pie">
     <p class="contador-encubrimiento">DÍAS DESDE EL ÚLTIMO ENCUBRIMIENTO: 0</p>
-    <p class="nota-honesta">
-      Cada expediente presenta los hechos documentados y sus dos lecturas.
-      Usa el interruptor de arriba para cambiar de bando.
-    </p>
+    <p class="nota-honesta">El fenómeno tiene dos historias: la de lo que se vio y la de cómo decidimos contarlo. Esta página cuenta las dos.</p>
   </footer>
 
   <script src="assets/app.js"></script>

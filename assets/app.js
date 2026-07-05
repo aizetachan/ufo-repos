@@ -97,6 +97,102 @@ function tarjetaCaso(caso) {
     </a>`;
 }
 
+/* ---------- Navegación común ---------- */
+const SECCIONES_NAV = [
+  ["index.html", "portada", "Archivo"],
+  ["cronologia.html", "cronologia", "Cronología"],
+  ["bestiario.html", "bestiario", "Bestiario"],
+  ["mapa.html", "mapa", "Mapa"],
+  ["archivo-espanol.html", "archivo-espanol", "Archivo español"],
+  ["archivos.html", "archivos", "Sala de archivos"],
+  ["glosario.html", "glosario", "Glosario"],
+  ["reportar.html", "reportar", "Reportar"],
+];
+
+function iniciarNav() {
+  const nav = document.getElementById("nav-sitio");
+  if (!nav) return;
+  const actual = document.body.dataset.pagina;
+  nav.innerHTML =
+    '<div class="contenido-nav">' +
+    SECCIONES_NAV.map(
+      ([href, pagina, nombre]) =>
+        `<a href="${href}" class="${pagina === actual ? "actual" : ""}">${nombre}</a>`
+    ).join("") +
+    "</div>";
+}
+
+/* ---------- Bestiario ---------- */
+const SILUETAS = {
+  grises:
+    '<svg viewBox="0 0 100 100"><path d="M50 8c-19 0-30 13-30 29 0 12 7 22 15 28l4 14c1 4 3 6 5 12h12c2-6 4-8 5-12l4-14c8-6 15-16 15-28 0-16-11-29-30-29z"/><ellipse cx="36" cy="42" rx="9" ry="14" transform="rotate(24 36 42)" fill="#060806"/><ellipse cx="64" cy="42" rx="9" ry="14" transform="rotate(-24 64 42)" fill="#060806"/></svg>',
+  nordicos:
+    '<svg viewBox="0 0 100 100"><circle cx="50" cy="16" r="11"/><path d="M50 28c-10 0-16 6-17 15l-3 25h6l3 24h5l2-22h8l2 22h5l3-24h6l-3-25c-1-9-7-15-17-15z"/></svg>',
+  reptilianos:
+    '<svg viewBox="0 0 100 100"><path d="M50 6l-8 10-10 4-6 14 2 14 8 12 4 12 3 20h14l3-20 4-12 8-12 2-14-6-14-10-4z"/><path d="M40 40l8 4-8 4c-3-2-3-6 0-8zM60 40c3 2 3 6 0 8l-8-4z" fill="#060806"/><path d="M46 12l4-8 4 8-4 4z" /></svg>',
+  mantis:
+    '<svg viewBox="0 0 100 100"><path d="M50 20L30 8l6 12zM50 20L70 8l-6 12z"/><path d="M50 18c-11 0-17 7-17 15 0 7 5 12 10 14l-6 18 6 24h4l2-20h2l2 20h4l6-24-6-18c5-2 10-7 10-14 0-8-6-15-17-15z"/><ellipse cx="40" cy="32" rx="6" ry="8" fill="#060806"/><ellipse cx="60" cy="32" rx="6" ry="8" fill="#060806"/><path d="M28 52l8-10 4 4-6 12zM72 52l-8-10-4 4 6 12z"/></svg>',
+  "duendes-hopkinsville":
+    '<svg viewBox="0 0 100 100"><path d="M22 18c8-2 14 2 16 8 4-2 8-3 12-3s8 1 12 3c2-6 8-10 16-8-2 8-6 12-11 14 4 4 7 10 7 16 0 14-11 22-24 22S26 62 26 48c0-6 3-12 7-16-5-2-9-6-11-14z"/><circle cx="41" cy="46" r="5" fill="#060806"/><circle cx="59" cy="46" r="5" fill="#060806"/><path d="M38 72l-6 20h8l4-16zM62 72l6 20h-8l-4-16z"/></svg>',
+};
+
+async function iniciarBestiario() {
+  const casos = await cargarCasos();
+  const resp = await fetch("data/bestiario.json");
+  const datos = await resp.json();
+  const cont = document.getElementById("bestiario");
+  cont.innerHTML = datos.entidades
+    .map((e) => {
+      const asociados = (e.casosAsociados || [])
+        .map((id) => casos.find((c) => c.id === id))
+        .filter(Boolean)
+        .map((c) => `<a href="expediente.html?id=${encodeURIComponent(c.id)}">${esc(c.titulo)}</a>`)
+        .join("");
+      return `
+      <div class="carta-entidad">
+        <span class="presencia">Presencia: ${esc(e.presenciaEnReportes)}</span>
+        <div class="silueta">${SILUETAS[e.id] || ""}</div>
+        <h3>${esc(e.nombre)}</h3>
+        <div class="alias">${esc(e.alias)}</div>
+        <div class="campo"><b>Primer registro</b>${esc(e.primerRegistro)}</div>
+        <div class="campo"><b>Apariencia reportada</b>${esc(e.apariencia)}</div>
+        <div class="campo"><b>Comportamiento en los relatos</b>${esc(e.comportamiento)}</div>
+        <div class="campo"><b>Origen cultural</b>${esc(e.origenCultural)}</div>
+        <div class="campo solo-creyente version version-creyente"><b class="quien">La lectura del creyente</b>${esc(e.creyente)}</div>
+        <div class="campo solo-esceptico version version-esceptico"><b class="quien">La lectura del escéptico</b>${esc(e.esceptico)}</div>
+        ${asociados ? `<div class="campo"><b>Casos en el archivo</b><span class="casos-asociados">${asociados}</span></div>` : ""}
+      </div>`;
+    })
+    .join("");
+}
+
+/* ---------- Cronología ---------- */
+async function iniciarCronologia() {
+  const casos = await cargarCasos();
+  const resp = await fetch("data/cronologia.json");
+  const datos = await resp.json();
+  const cont = document.getElementById("cronologia");
+
+  let html = "";
+  let decadaActual = null;
+  for (const ev of datos.eventos) {
+    const decada = Math.floor(ev.anio / 10) * 10;
+    if (decada !== decadaActual) {
+      decadaActual = decada;
+      html += `<div class="marcador-decada"><span>${decada}s</span></div>`;
+    }
+    const caso = ev.casoId ? casos.find((c) => c.id === ev.casoId) : null;
+    html += `
+      <div class="hito hito-${ev.carril}">
+        <span class="anio-hito">${esc(ev.fechaTexto)}</span>
+        <h3>${esc(ev.titulo)}</h3>
+        <p>${esc(ev.texto)}</p>
+        ${caso ? `<a class="enlace-caso" href="expediente.html?id=${encodeURIComponent(caso.id)}">▸ Abrir expediente</a>` : ""}
+      </div>`;
+  }
+  cont.innerHTML = html;
+}
+
 /* ---------- Portada ---------- */
 async function iniciarPortada() {
   const casos = await cargarCasos();
@@ -233,7 +329,10 @@ async function iniciarExpediente() {
 document.addEventListener("DOMContentLoaded", () => {
   iniciarModo();
   iniciarIntro();
+  iniciarNav();
   const pagina = document.body.dataset.pagina;
   if (pagina === "portada") iniciarPortada();
   if (pagina === "expediente") iniciarExpediente();
+  if (pagina === "bestiario") iniciarBestiario();
+  if (pagina === "cronologia") iniciarCronologia();
 });

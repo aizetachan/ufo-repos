@@ -1,0 +1,70 @@
+{
+  "nota": "Guía de tipología del fenómeno: qué describe la gente en los reportes y de dónde viene culturalmente cada figura. No afirmamos que estas entidades existan: documentamos el arquetipo, su origen y los casos que lo alimentaron.",
+  "entidades": [
+    {
+      "id": "grises",
+      "nombre": "Los Grises",
+      "alias": "Greys · Zeta Reticulanos",
+      "presenciaEnReportes": "alta",
+      "primerRegistro": "1961 — caso Betty y Barney Hill (EE.UU.)",
+      "apariencia": "Estatura baja (1,0–1,4 m), piel gris, cabeza grande en forma de pera, ojos negros almendrados enormes, sin nariz ni orejas apreciables, cuerpo frágil.",
+      "comportamiento": "Protagonistas del relato clásico de abducción: examen médico a bordo, comunicación telepática, borrado parcial de memoria.",
+      "origenCultural": "El arquetipo nace del relato bajo hipnosis de los Hill (1964) y se consagra con la portada del libro 'Communion' de Whitley Strieber (1987) y la autopsia falsa de Roswell (1995). Desde los 90 es EL alienígena por defecto de la cultura popular.",
+      "casosAsociados": ["hill-1961", "roswell-1947", "varginha-1996"],
+      "creyente": "La coherencia del retrato a lo largo de décadas y continentes —miles de relatos independientes describiendo el mismo ser— es difícil de despachar como simple contagio cultural: muchos testigos afirmaban no conocer la iconografía previa.",
+      "esceptico": "La coherencia es exactamente lo que predice el contagio cultural: el gris no aparece en ningún relato anterior a 1961 y su popularidad explota justo después de cada hito mediático (el libro de los Hill, 'Encuentros en la tercera fase', 'Communion', 'Expediente X'). Los rasgos coinciden además con el rostro neoténico que el cerebro humano produce en estados hipnagógicos."
+    },
+    {
+      "id": "nordicos",
+      "nombre": "Los Nórdicos",
+      "alias": "Rubios espaciales · Venusinos (época contactada)",
+      "presenciaEnReportes": "media-baja",
+      "primerRegistro": "1952 — relatos de George Adamski y la era de los 'contactados' (EE.UU.)",
+      "apariencia": "Humanoides altos y de aspecto humano idealizado: cabello rubio largo, ojos claros, complexión atlética, vestimenta ajustada de una pieza.",
+      "comportamiento": "A diferencia de los Grises, no abducen: 'eligen' contactados a los que transmiten advertencias sobre la guerra nuclear y el destino de la humanidad.",
+      "origenCultural": "Hijos de la Guerra Fría temprana: los contactados de los años 50 (Adamski, Menger) describieron salvadores venusinos con estética escandinava en plena angustia atómica. El arquetipo recicla figuras previas: ángeles, seres teosóficos y el 'hombre ario ideal' de la época.",
+      "casosAsociados": [],
+      "creyente": "Los relatos de humanoides de aspecto humano no desaparecieron con los contactados: siguen apareciendo esporádicamente en casos de encuentro cercano sin conexión aparente entre testigos.",
+      "esceptico": "Es el arquetipo con la huella cultural más transparente: nace exactamente cuando la humanidad estrena el miedo nuclear, dice exactamente lo que ese público necesitaba oír, y se desvanece de los reportes cuando cambia la moda. Adamski, además, fue desenmascarado en vida: sus fotos eran maquetas."
+    },
+    {
+      "id": "reptilianos",
+      "nombre": "Los Reptilianos",
+      "alias": "Reptoides · Lagartos",
+      "presenciaEnReportes": "baja (alta en teorías de conspiración)",
+      "primerRegistro": "Años 80-90 — folclore abduccionista tardío; popularizados por David Icke (1999)",
+      "apariencia": "Humanoides altos (2 m o más) de piel escamosa verde o parda, ojos verticales de reptil, complexión poderosa. En la versión conspirativa, capaces de 'camuflarse' como humanos.",
+      "comportamiento": "En los reportes de abducción tardíos aparecen como figuras hostiles. En la teoría de conspiración de Icke son una élite oculta que gobierna el mundo — afirmación sin ninguna evidencia y con ecos antisemitas documentados.",
+      "origenCultural": "Mezcla de fuentes rastreables: la ciencia ficción pulp de los años 30 (Robert E. Howard, 'The Shadow Kingdom'), la serie de TV 'V' (1983) y el salto final al mainstream conspirativo con 'The Biggest Secret' de David Icke. Es el ejemplo perfecto de cómo la ficción migra al testimonio.",
+      "casosAsociados": [],
+      "creyente": "Incluso descontando a Icke y la ciencia ficción, existe un goteo de reportes de entidades 'reptiloides' en encuentros cercanos que precede a la serie 'V' y no encaja en el molde gris.",
+      "esceptico": "Es el arquetipo más claramente literario del catálogo: cada rasgo tiene partida de nacimiento en la ficción, y su 'casuística' es casi inexistente fuera de foros conspirativos. Lo incluimos como caso de estudio de contaminación cultural, no como tipología de reporte seria."
+    },
+    {
+      "id": "mantis",
+      "nombre": "Los Mantis",
+      "alias": "Insectoides · Mantidianos",
+      "presenciaEnReportes": "baja",
+      "primerRegistro": "Años 80-90 — relatos de abducción de segunda generación (EE.UU.)",
+      "apariencia": "Entidades de 2-2,5 m con rasgos de insecto: cabeza triangular, ojos compuestos enormes, extremidades largas y articuladas 'plegadas' como una mantis religiosa.",
+      "comportamiento": "En los relatos aparecen como figuras de autoridad que supervisan a los Grises durante los exámenes, descritas con una mezcla de terror reverencial.",
+      "origenCultural": "Emergen en la literatura abduccionista de los 80-90 (investigaciones de Budd Hopkins y David Jacobs, el entorno de 'Communion'). El insecto gigante es además un terror primario con larga tradición en el cine de serie B de los años 50.",
+      "casosAsociados": ["hill-1961"],
+      "creyente": "Los testigos que describen mantis suelen hacerlo con desconcierto y vergüenza —'sé que suena absurdo'—, un patrón que los investigadores asocian a relatos no fabricados.",
+      "esceptico": "Aparecen exclusivamente en el circuito de la hipnosis regresiva —una técnica que fabrica recuerdos— y justo cuando el género abducción necesitaba nuevos personajes. La 'vergüenza del testigo' no distingue un recuerdo real de uno sincero pero falso."
+    },
+    {
+      "id": "duendes-hopkinsville",
+      "nombre": "Los Duendes de Hopkinsville",
+      "alias": "Hombrecillos de Kelly · Goblins plateados",
+      "presenciaEnReportes": "caso único (icónico)",
+      "primerRegistro": "21 de agosto de 1955 — granja de los Sutton, Kelly-Hopkinsville (Kentucky, EE.UU.)",
+      "apariencia": "Criaturas de menos de un metro, aspecto plateado 'metálico', orejas enormes, ojos brillantes, brazos largos acabados en garras, que parecían flotar o moverse a saltos.",
+      "comportamiento": "Según la familia Sutton, asediaron la granja durante horas asomándose a puertas y ventanas, encajando disparos de escopeta 'como si golpearan metal' sin caer.",
+      "origenCultural": "Uno de los casos de entidades más famosos de la historia: once testigos, una familia entera que acabó en comisaría en plena noche, y policías que encontraron la casa acribillada desde dentro. La palabra 'little green men' se popularizó en la prensa a raíz de este caso.",
+      "casosAsociados": ["talavera-1976", "varginha-1996"],
+      "creyente": "Once personas de tres generaciones, aterrorizadas de forma genuina según la policía que las atendió, sosteniendo el relato sin fisuras ni ánimo de lucro durante décadas. Algo pasó aquella noche en esa granja.",
+      "esceptico": "La explicación más aceptada es tan mundana como memorable: una pareja de búhos cornudos territoriales vistos de noche por una familia en tensión (y con alguna escopeta de más). El búho cornudo mide lo descrito, tiene 'orejas' enormes, ojos brillantes y ataca de noche. El pánico hizo el resto."
+    }
+  ]
+}

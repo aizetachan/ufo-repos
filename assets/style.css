@@ -518,6 +518,361 @@ body[data-modo="esceptico"] .solo-creyente { display: none; }
   text-transform: uppercase;
 }
 
+/* ---------- Navegación del sitio ---------- */
+.nav-sitio {
+  border-top: 1px solid var(--linea);
+}
+.nav-sitio .contenido-nav {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4px 18px;
+  flex-wrap: wrap;
+  padding: 7px 0;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.nav-sitio a { color: var(--tinta-tenue); }
+.nav-sitio a:hover { color: var(--fosforo); text-decoration: none; }
+.nav-sitio a.actual { color: var(--fosforo); border-bottom: 1px solid var(--fosforo); }
+
+/* ---------- Bestiario ---------- */
+.rejilla-bestiario {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+.carta-entidad {
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.carta-entidad:hover { border-color: var(--fosforo); }
+.carta-entidad .silueta {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+.carta-entidad .silueta svg { width: 100%; height: 100%; fill: var(--fosforo); filter: drop-shadow(0 0 8px rgba(53, 224, 107, 0.35)); }
+.carta-entidad h3 {
+  text-align: center;
+  font-size: 19px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #e8f0e8;
+}
+.carta-entidad .alias {
+  text-align: center;
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  color: var(--tinta-tenue);
+  text-transform: uppercase;
+  margin-top: -6px;
+}
+.carta-entidad .campo { font-size: 12.5px; }
+.carta-entidad .campo b {
+  display: block;
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fosforo);
+  font-weight: normal;
+  margin-bottom: 2px;
+}
+.carta-entidad .presencia {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--ambar);
+  color: var(--ambar);
+  padding: 2px 8px;
+}
+.carta-entidad .casos-asociados { display: flex; gap: 6px; flex-wrap: wrap; }
+.carta-entidad .casos-asociados a {
+  font-size: 10.5px;
+  border: 1px solid var(--linea);
+  padding: 3px 8px;
+  color: var(--tinta);
+}
+.carta-entidad .casos-asociados a:hover { border-color: var(--fosforo); color: var(--fosforo); text-decoration: none; }
+.carta-entidad .version { margin-top: 4px; }
+
+/* ---------- Cronología ---------- */
+.leyenda-cronologia { display: flex; gap: 14px; margin-bottom: 22px; }
+.pastilla { font-size: 10px; letter-spacing: 2px; }
+.pastilla-caso { color: var(--fosforo); }
+.pastilla-historia { color: var(--ambar); }
+
+.cronologia { position: relative; padding-left: 0; }
+.cronologia::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--linea);
+}
+.hito {
+  position: relative;
+  width: calc(50% - 34px);
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+.hito .anio-hito {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--tinta-tenue);
+  text-transform: uppercase;
+}
+.hito h3 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; margin: 3px 0 6px; color: #e8f0e8; }
+.hito::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+}
+.hito-caso { margin-right: auto; border-left: 3px solid var(--fosforo); }
+.hito-caso::after { right: -39px; background: var(--fosforo); box-shadow: 0 0 8px var(--fosforo); }
+.hito-historia { margin-left: auto; border-right: 3px solid var(--ambar); text-align: left; }
+.hito-historia::after { left: -39px; background: var(--ambar); box-shadow: 0 0 8px var(--ambar); }
+.hito a.enlace-caso {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.marcador-decada {
+  text-align: center;
+  margin: 30px 0 24px;
+  position: relative;
+  font-size: 13px;
+  letter-spacing: 6px;
+  color: var(--tinta-tenue);
+}
+.marcador-decada span {
+  background: var(--negro);
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 720px) {
+  .cronologia::before { left: 8px; }
+  .hito { width: auto; margin-left: 30px !important; margin-right: 0 !important; }
+  .hito::after { left: -27px !important; right: auto !important; }
+  .hito-historia { border-right: none; border-left: 3px solid var(--ambar); }
+}
+
+/* ---------- Buscador ---------- */
+.buscador {
+  width: 100%;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  color: var(--fosforo);
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 11px 14px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+.buscador:focus { outline: none; border-color: var(--fosforo); box-shadow: 0 0 12px rgba(53, 224, 107, 0.15); }
+.buscador::placeholder { color: var(--tinta-tenue); }
+.sin-resultados { color: var(--tinta-tenue); font-size: 13px; padding: 20px 0; }
+
+/* ---------- Glosario / términos ---------- */
+.termino {
+  border-bottom: 1px dotted var(--fosforo);
+  cursor: help;
+  position: relative;
+}
+.termino:hover::after {
+  content: attr(data-def);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 6px);
+  z-index: 50;
+  width: 280px;
+  background: #0e140e;
+  border: 1px solid var(--fosforo);
+  color: var(--tinta);
+  font-size: 11.5px;
+  line-height: 1.5;
+  padding: 10px 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.lista-glosario { display: grid; gap: 12px; }
+.entrada-glosario {
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  padding: 14px 18px;
+  font-size: 13px;
+}
+.entrada-glosario b {
+  color: var(--fosforo);
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* ---------- Mapa ---------- */
+#mapa {
+  height: 560px;
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  filter: saturate(0.7);
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #0e140e !important;
+  color: var(--tinta) !important;
+  border: 1px solid var(--fosforo);
+  border-radius: 0 !important;
+  font-family: var(--mono) !important;
+}
+.leaflet-popup-content a { color: var(--fosforo); }
+.marcador-ovni {
+  background: var(--fosforo);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--fosforo);
+  border: 2px solid #063;
+}
+.marcador-ovni.rojo { background: var(--rojo); box-shadow: 0 0 10px var(--rojo); border-color: #611; }
+
+/* ---------- Formulario de reporte ---------- */
+.formulario-reporte { max-width: 720px; }
+.formulario-reporte label {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fosforo);
+  margin: 18px 0 6px;
+}
+.formulario-reporte input[type="text"],
+.formulario-reporte input[type="date"],
+.formulario-reporte textarea,
+.formulario-reporte select {
+  width: 100%;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  color: var(--tinta);
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 10px 12px;
+}
+.formulario-reporte input:focus, .formulario-reporte textarea:focus, .formulario-reporte select:focus {
+  outline: none;
+  border-color: var(--fosforo);
+}
+.formulario-reporte textarea { min-height: 130px; resize: vertical; }
+.lista-descartes { border: 1px dashed var(--linea); padding: 14px 16px; }
+.lista-descartes label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  font-size: 12.5px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--tinta);
+  cursor: pointer;
+}
+.lista-descartes input { accent-color: var(--fosforo); }
+.boton-enviar {
+  margin-top: 22px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: var(--fosforo-tenue);
+  border: 1px solid var(--fosforo);
+  color: var(--fosforo);
+  padding: 12px 28px;
+  cursor: pointer;
+}
+.boton-enviar:hover { background: rgba(53, 224, 107, 0.25); }
+.respuesta-reporte {
+  border: 1px solid var(--fosforo);
+  background: var(--fosforo-tenue);
+  padding: 22px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.respuesta-reporte .ref-reporte { color: var(--fosforo); letter-spacing: 2px; }
+
+/* ---------- Archivo español (tabla 83) ---------- */
+.grupo-anio { margin-bottom: 8px; }
+.grupo-anio summary {
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 3px;
+  padding: 10px 14px;
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  color: var(--tinta);
+  list-style: none;
+}
+.grupo-anio summary::before { content: "▸ "; color: var(--fosforo); }
+.grupo-anio[open] summary::before { content: "▾ "; }
+.grupo-anio summary:hover { border-color: var(--fosforo); }
+.grupo-anio summary .n-exp { color: var(--tinta-tenue); font-size: 11px; float: right; }
+.grupo-anio .expedientes-anio { border: 1px solid var(--linea); border-top: none; padding: 6px 0; }
+.exp-linea {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 16px;
+  font-size: 12.5px;
+  color: var(--tinta);
+}
+.exp-linea:hover { background: var(--fosforo-tenue); text-decoration: none; }
+.exp-linea .ver-exp { color: var(--fosforo); white-space: nowrap; font-size: 11px; letter-spacing: 1px; }
+
+/* ---------- Expediente prohibido (Konami) ---------- */
+#expediente-prohibido {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 4, 0.96);
+  z-index: 10001;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+#expediente-prohibido .documento-prohibido {
+  max-width: 640px;
+  margin: 0 auto;
+  border: 1px solid var(--rojo);
+  background: var(--papel);
+  padding: 30px;
+  font-size: 13.5px;
+  line-height: 1.9;
+}
+#expediente-prohibido .cerrar-prohibido {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--rojo);
+  border: 1px solid var(--rojo);
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
   .expediente-cabecera h1 { font-size: 22px; max-width: 100%; }
