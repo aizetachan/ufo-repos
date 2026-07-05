@@ -189,6 +189,7 @@ async function iniciarCronologia() {
         <h3>${esc(ev.titulo)}</h3>
         <p>${esc(ev.texto)}</p>
         ${caso ? `<a class="enlace-caso" href="expediente.html?id=${encodeURIComponent(caso.id)}">▸ Abrir expediente</a>` : ""}
+        ${ev.url ? `<a class="enlace-caso" href="${esc(ev.url)}" target="_blank" rel="noopener">▸ Ver documento oficial</a>` : ""}
       </div>`;
   }
   cont.innerHTML = html;
