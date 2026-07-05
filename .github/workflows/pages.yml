@@ -1,34 +1,28 @@
 name: Desplegar a GitHub Pages
 
+# Estrategia: publicar el sitio en la rama gh-pages (GitHub la sirve
+# automáticamente). El intento con actions/deploy-pages falló porque el
+# GITHUB_TOKEN no puede CREAR el sitio de Pages en repos personales.
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  publicar:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      # enablement: true activa GitHub Pages en el repo automáticamente
-      # la primera vez, sin tocar los Settings a mano.
-      - uses: actions/configure-pages@v5
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          enablement: true
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          exclude_assets: '.github,firebase.json,.firebaserc,README.md'
