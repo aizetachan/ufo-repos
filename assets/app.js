@@ -107,6 +107,7 @@ const SECCIONES_NAV = [
   ["archivos.html", "archivos", "Sala de archivos"],
   ["glosario.html", "glosario", "Glosario"],
   ["reportar.html", "reportar", "Reportar"],
+  ["metodologia.html", "metodologia", "Metodología"],
 ];
 
 function iniciarNav() {
