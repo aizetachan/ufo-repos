@@ -1,0 +1,469 @@
+{
+  "esquema": {
+    "version": 1,
+    "descripcion": "Cada caso documenta un incidente OVNI/UAP con fuentes verificables. 'creyente' y 'esceptico' son las dos lecturas del mismo caso. 'estado' refleja el mejor conocimiento actual: explicado | disputado | sin_explicar.",
+    "verificacionEnlaces": "2026-07-05"
+  },
+  "casos": [
+    {
+      "id": "san-javier-1962",
+      "titulo": "San Javier: donde empieza el archivo",
+      "pais": "España",
+      "lugar": "Academia General del Aire, San Javier (Murcia)",
+      "coordenadas": [37.775, -0.812],
+      "fecha": "1962-08-06",
+      "fechaTexto": "6, 7 y 13 de agosto de 1962",
+      "estado": "disputado",
+      "tipo": ["militar", "avistamiento nocturno"],
+      "empiezaAqui": 1,
+      "gancho": "El primer expediente OVNI oficial de España. Aquí empieza todo.",
+      "resumen": "El expediente más antiguo del archivo desclasificado del Ejército del Aire: avistamientos de luces y fenómenos extraños reportados desde la Academia General del Aire de San Javier en agosto de 1962.",
+      "queOcurrio": "Durante tres noches de agosto de 1962, personal del entorno de la Academia General del Aire de San Javier reportó la observación de fenómenos luminosos extraños en el cielo. Los partes dieron lugar al primer expediente de la serie que el Ejército del Aire acumularía durante más de tres décadas y que fue desclasificada entre 1992 y 1999. El valor de este caso es sobre todo histórico: marca el inicio de la casuística oficial española.",
+      "testigos": ["Personal militar y observadores del entorno de la Academia General del Aire"],
+      "creyente": "Que el primer expediente oficial español naciera en una instalación militar de formación de pilotos no es casual: los observadores eran personal entrenado en identificar aeronaves. Si ellos no supieron qué era, ¿quién?",
+      "esceptico": "1962 es plena Guerra Fría y plena era espacial temprana: globos meteorológicos, aeronaves, reentradas y cuerpos astronómicos brillantes (Venus, Júpiter) explican la mayoría de los reportes nocturnos de la época. El expediente documenta que se vio algo, no qué se vio.",
+      "documentos": [
+        {
+          "titulo": "Expediente oficial desclasificado — Avistamiento de fenómenos extraños en San Javier (agosto 1962)",
+          "fuente": "Biblioteca Virtual del Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/consulta/busqueda_referencia.do?idValor=396004"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Micrositio Expedientes OVNI — Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/micrositios/inicio.do"
+        }
+      ],
+      "relacionados": ["canarias-1976", "moron-1995"]
+    },
+    {
+      "id": "canarias-1976",
+      "titulo": "La esfera de Canarias",
+      "pais": "España",
+      "lugar": "Islas Canarias (visible desde Gran Canaria, Tenerife y Fuerteventura)",
+      "coordenadas": [28.1, -15.4],
+      "fecha": "1976-06-22",
+      "fechaTexto": "22 de junio de 1976",
+      "estado": "explicado",
+      "tipo": ["avistamiento masivo", "militar", "marítimo"],
+      "empiezaAqui": 2,
+      "gancho": "Miles de testigos, un médico, una corbeta de la Armada... y una explicación que tardó décadas en llegar.",
+      "resumen": "Una enorme esfera luminosa fue observada desde varias islas del archipiélago canario, incluida la tripulación de la corbeta 'Atrevida' de la Armada. Es el caso más célebre del archivo español.",
+      "queOcurrio": "La noche del 22 de junio de 1976, testigos en varias islas —entre ellos el médico Francisco Padrón León, que circulaba en taxi por Gran Canaria, y la dotación de la corbeta 'Atrevida' de la Armada frente a Fuerteventura— observaron un fenómeno luminoso descrito como una gran esfera o semiesfera de luz que evolucionó durante varios minutos y fue visible a enorme distancia. El Ejército del Aire abrió expediente con declaraciones detalladas. Es probablemente el caso con más testigos de la casuística española.",
+      "testigos": ["Dr. Francisco Padrón León (médico)", "Dotación de la corbeta 'Atrevida' (Armada)", "Numerosos testigos civiles en varias islas"],
+      "creyente": "Un objeto luminoso de tamaño aparente descomunal, visto simultáneamente desde puntos separados por decenas de kilómetros, con testigos de la máxima solvencia: un médico y marinos de guerra. El propio expediente militar lo calificó en su día de fenómeno no identificado.",
+      "esceptico": "La investigación posterior (Ricardo Campo y Vicente-Juan Ballester Olmos) identificó la causa: el lanzamiento de un misil balístico Poseidon desde un submarino estadounidense frente a la costa africana. La 'esfera' es el efecto óptico de la pluma del cohete expandiéndose en la alta atmósfera al atardecer — el mismo fenómeno reapareció en Canarias en otros avistamientos de 1974-1979 que coinciden con lanzamientos documentados.",
+      "documentos": [
+        {
+          "titulo": "Expediente oficial desclasificado — Canarias, 22 de junio de 1976",
+          "fuente": "Biblioteca Virtual del Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/consulta/busqueda_referencia.do?idValor=395904"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Micrositio Expedientes OVNI — Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/micrositios/inicio.do"
+        },
+        {
+          "titulo": "Proyecto FOTOCAT (V.J. Ballester Olmos)",
+          "url": "https://fotocat.blogspot.com/"
+        }
+      ],
+      "relacionados": ["manises-1979", "san-javier-1962"]
+    },
+    {
+      "id": "talavera-1976",
+      "titulo": "El centinela de Talavera la Real",
+      "pais": "España",
+      "lugar": "Base Aérea de Talavera la Real (Badajoz)",
+      "coordenadas": [38.883, -6.813],
+      "fecha": "1976-11-12",
+      "fechaTexto": "12 de noviembre de 1976",
+      "estado": "sin_explicar",
+      "tipo": ["encuentro cercano", "militar", "humanoide"],
+      "empiezaAqui": null,
+      "gancho": "Dos soldados de guardia, un silbido creciente y una figura luminosa de tres metros. El expediente sigue sin conclusión.",
+      "resumen": "Dos soldados de guardia en la Base Aérea de Talavera la Real reportaron un intenso silbido, un destello y la aparición de una figura humanoide luminosa de gran estatura. Uno de ellos sufrió afecciones visuales posteriores.",
+      "queOcurrio": "En la madrugada del 12 de noviembre de 1976, los centinelas José María Trejo y Juan Carrizosa, de guardia en el polvorín de la base, escucharon un silbido agudo que crecía en intensidad, observaron un destello y, según su declaración, una figura luminosa de unos tres metros de altura que se les apareció a corta distancia. Trejo intentó hacer fuego y relató una sensación de parálisis; la figura desapareció bruscamente. En días posteriores Trejo sufrió episodios de pérdida de visión documentados. El suceso generó uno de los expedientes de encuentro cercano más singulares del archivo oficial.",
+      "testigos": ["Soldado José María Trejo", "Soldado Juan Carrizosa", "Un tercer soldado acudió tras la alarma"],
+      "creyente": "Es el único caso del archivo español con una entidad: dos testigos militares armados, en servicio, con secuelas físicas documentadas en uno de ellos y coherencia entre declaraciones tomadas por separado. Ninguna explicación convencional ha dado cuenta del conjunto: sonido, figura, parálisis y lesiones.",
+      "esceptico": "Un encuentro nocturno de alta tensión, en guardia y con miedo, es el escenario clásico de una experiencia perceptiva anómala: estrés agudo, sugestión mutua y posiblemente un estímulo inicial banal (interferencia de radio, luz lejana). Las secuelas visuales pudieron ser psicosomáticas o de causa médica independiente. Sin evidencia física, el testimonio —por sincero que sea— no basta para concluir nada extraordinario.",
+      "documentos": [
+        {
+          "titulo": "Expediente oficial desclasificado — Base Aérea de Talavera, 12 de noviembre de 1976",
+          "fuente": "Biblioteca Virtual del Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/consulta/busqueda_referencia.do?idValor=395902"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Micrositio Expedientes OVNI — Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/micrositios/inicio.do"
+        }
+      ],
+      "relacionados": ["varginha-1996", "hill-1961"]
+    },
+    {
+      "id": "manises-1979",
+      "titulo": "Incidente de Manises",
+      "pais": "España",
+      "lugar": "Espacio aéreo mediterráneo / Aeropuerto de Manises (Valencia)",
+      "coordenadas": [39.489, -0.481],
+      "fecha": "1979-11-11",
+      "fechaTexto": "11 de noviembre de 1979",
+      "estado": "disputado",
+      "tipo": ["aviación comercial", "interceptación militar"],
+      "empiezaAqui": 3,
+      "gancho": "El único caso del mundo en que un vuelo comercial aterrizó de emergencia por un OVNI — y un caza despegó a perseguirlo.",
+      "resumen": "Un Supercaravelle de TAE realizó un aterrizaje de emergencia en Valencia tras ser seguido por luces rojas no identificadas. Un Mirage F1 del Ejército del Aire despegó para interceptar el fenómeno sin lograr alcanzarlo.",
+      "queOcurrio": "La noche del 11 de noviembre de 1979, el vuelo JK-297 de TAE (un Supercaravelle con 109 pasajeros, comandado por Francisco Javier Lerdo de Tejada) observó un conjunto de luces rojas que parecían aproximarse en rumbo de colisión y maniobrar alrededor del avión. Ante la imposibilidad de identificarlas y evitarlas, el comandante decidió aterrizar de emergencia en Manises (Valencia): es el único aterrizaje de emergencia de un vuelo comercial motivado por un OVNI del que hay constancia. Un Mirage F1, pilotado por el capitán Fernando Cámara, despegó de Los Llanos (Albacete) y persiguió durante más de una hora una luz que, según su informe, parecía alejarse cada vez que se aproximaba, alcanzando el caza Mach 1.4 sin conseguir identificarla. El Ejército del Aire abrió dos expedientes, hoy desclasificados.",
+      "testigos": ["Cte. Francisco Javier Lerdo de Tejada (TAE)", "Tripulación y pasaje del vuelo JK-297", "Cap. Fernando Cámara (Mirage F1)", "Personal de torre y radar"],
+      "creyente": "Tripulación comercial experimentada, un piloto de combate, radares y más de cien pasajeros. El caza más rápido de España no pudo darle alcance. Si fuera una refinería en el horizonte, ¿por qué el fenómeno 'respondía' alejándose cuando el Mirage aceleraba?",
+      "esceptico": "La investigación civil (Ballester Olmos y otros) atribuye las luces a las llamaradas de la refinería de Escombreras (Cartagena) vistas a gran distancia en condiciones de propagación anómala, combinadas con estrellas brillantes durante la persecución del Mirage: perseguir un punto de luz lejano produce exactamente la sensación de que 'huye'. El expediente no aporta registro de radar concluyente del objeto.",
+      "documentos": [
+        {
+          "titulo": "Expediente oficial desclasificado (I) — Valencia, Motril y Madrid, noviembre de 1979",
+          "fuente": "Biblioteca Virtual del Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/consulta/busqueda_referencia.do?idValor=396020"
+        },
+        {
+          "titulo": "Expediente oficial desclasificado (II) — Valencia, Motril y Madrid, noviembre de 1979",
+          "fuente": "Biblioteca Virtual del Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/consulta/busqueda_referencia.do?idValor=396008"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Micrositio Expedientes OVNI — Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/micrositios/inicio.do"
+        }
+      ],
+      "relacionados": ["bcn-zaragoza-1979", "nimitz-2004", "canarias-1976"]
+    },
+    {
+      "id": "bcn-zaragoza-1979",
+      "titulo": "La luz del vuelo Barcelona–Zaragoza",
+      "pais": "España",
+      "lugar": "Corredor aéreo Barcelona–Zaragoza",
+      "coordenadas": [41.4, 0.5],
+      "fecha": "1979-12-16",
+      "fechaTexto": "16 de diciembre de 1979",
+      "estado": "disputado",
+      "tipo": ["aviación comercial"],
+      "empiezaAqui": null,
+      "gancho": "Un mes después de Manises, otra tripulación comercial española reportó una luz imposible.",
+      "resumen": "Semanas después del incidente de Manises, la tripulación de un vuelo en la ruta Barcelona–Zaragoza reportó una potente luz no identificada que evolucionaba en las proximidades de la aeronave, generando un nuevo expediente oficial.",
+      "queOcurrio": "El 16 de diciembre de 1979, en plena ola de avistamientos que siguió al caso Manises, la tripulación de un vuelo comercial en la ruta Barcelona–Zaragoza informó de la observación de una luz intensa cuyo comportamiento no pudieron identificar. El parte fue tramitado y quedó recogido en el expediente correspondiente del archivo del Ejército del Aire, hoy desclasificado. El interés del caso está en el contexto: la casuística de finales de 1979 muestra cómo una ola de reportes se retroalimenta tras un caso mediático.",
+      "testigos": ["Tripulación del vuelo comercial"],
+      "creyente": "Tripulaciones distintas, rutas distintas, semanas de diferencia y el mismo patrón: luces potentes maniobrando cerca de aviones comerciales. La ola de 1979 en el Mediterráneo español sigue siendo la más intensa registrada en el archivo oficial.",
+      "esceptico": "Las 'olas' de avistamientos suelen decir más de la psicología colectiva que del cielo: tras el enorme eco mediático de Manises, cualquier luz nocturna (Venus, bólidos, llamaradas industriales lejanas) se reportaba. Que haya expediente prueba diligencia administrativa, no anomalía.",
+      "documentos": [
+        {
+          "titulo": "Expediente oficial desclasificado — Vuelo Barcelona–Zaragoza, 16 de diciembre de 1979",
+          "fuente": "Biblioteca Virtual del Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/consulta/busqueda_referencia.do?idValor=396006"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Micrositio Expedientes OVNI — Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/micrositios/inicio.do"
+        }
+      ],
+      "relacionados": ["manises-1979", "mallorca-1979"]
+    },
+    {
+      "id": "mallorca-1979",
+      "titulo": "Expediente Mallorca",
+      "pais": "España",
+      "lugar": "Mallorca (Islas Baleares)",
+      "coordenadas": [39.57, 2.65],
+      "fecha": "1979-02-14",
+      "fechaTexto": "14 de febrero de 1979",
+      "estado": "disputado",
+      "tipo": ["avistamiento nocturno"],
+      "empiezaAqui": null,
+      "gancho": "1979: el año en que el cielo español se llenó de expedientes.",
+      "resumen": "Avistamiento de fenómenos extraños reportado en Mallorca en febrero de 1979, meses antes del incidente de Manises, recogido en expediente oficial del Ejército del Aire.",
+      "queOcurrio": "El 14 de febrero de 1979 se reportó desde Mallorca la observación de un fenómeno aéreo no identificado, que dio lugar a la apertura de expediente por parte del Ejército del Aire. El caso forma parte de la intensa casuística española de 1979, el año con más actividad del archivo desclasificado, que culminaría en noviembre con el incidente de Manises.",
+      "testigos": ["Testigos recogidos en el expediente oficial"],
+      "creyente": "La ola de 1979 empezó mucho antes de Manises: los expedientes de ese año dibujan meses de actividad anómala sobre el Mediterráneo español que ninguna causa única explica.",
+      "esceptico": "Los cielos del Mediterráneo en 1979 tenían las mismas fuentes de confusión que hoy: tráfico aéreo creciente, maniobras militares, satélites y planetas brillantes. Cada expediente merece análisis individual antes de sumarlo a ninguna 'ola'.",
+      "documentos": [
+        {
+          "titulo": "Expediente oficial desclasificado — Mallorca, 14 de febrero de 1979",
+          "fuente": "Biblioteca Virtual del Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/consulta/busqueda_referencia.do?idValor=396014"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Micrositio Expedientes OVNI — Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/micrositios/inicio.do"
+        }
+      ],
+      "relacionados": ["bcn-zaragoza-1979", "manises-1979"]
+    },
+    {
+      "id": "moron-1995",
+      "titulo": "Morón: el último expediente",
+      "pais": "España",
+      "lugar": "Base Aérea de Morón (Sevilla)",
+      "coordenadas": [37.175, -5.616],
+      "fecha": "1995-02-23",
+      "fechaTexto": "23 de febrero de 1995",
+      "estado": "disputado",
+      "tipo": ["militar", "avistamiento"],
+      "empiezaAqui": null,
+      "gancho": "El expediente que cierra 33 años de archivo oficial. Después de este, silencio administrativo.",
+      "resumen": "El último caso del archivo desclasificado del Ejército del Aire: un avistamiento reportado desde el entorno de la Base Aérea de Morón en febrero de 1995. Con él se cierra la serie oficial iniciada en 1962.",
+      "queOcurrio": "El 23 de febrero de 1995 se reportó un fenómeno aéreo no identificado en el entorno de la Base Aérea de Morón (Sevilla), que dio lugar al último expediente de la colección desclasificada. Tras él, el Ejército del Aire no ha hecho públicos nuevos expedientes de esta naturaleza, lo que convierte a Morón en el cierre —por ahora— de 33 años de registro oficial del fenómeno en España.",
+      "testigos": ["Testigos recogidos en el expediente oficial"],
+      "creyente": "¿De verdad el fenómeno cesó en 1995, o simplemente dejó de documentarse en expedientes públicos? Treinta años después, la pregunta de qué registra hoy Defensa —y dónde— sigue abierta.",
+      "esceptico": "Lo que terminó en 1995 no fue el fenómeno sino el procedimiento: los reportes cayeron en toda Europa al normalizarse la explicación de la mayoría de estímulos y perder interés mediático. La ausencia de expedientes posteriores es un dato administrativo, no un misterio.",
+      "documentos": [
+        {
+          "titulo": "Expediente oficial desclasificado — Morón, 23 de febrero de 1995",
+          "fuente": "Biblioteca Virtual del Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/consulta/busqueda_referencia.do?idValor=395956"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Micrositio Expedientes OVNI — Ministerio de Defensa",
+          "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/exp_ovni/es/micrositios/inicio.do"
+        }
+      ],
+      "relacionados": ["san-javier-1962", "nimitz-2004"]
+    },
+    {
+      "id": "roswell-1947",
+      "titulo": "Roswell",
+      "pais": "Estados Unidos",
+      "lugar": "Rancho Foster, cerca de Roswell (Nuevo México)",
+      "coordenadas": [33.95, -105.31],
+      "fecha": "1947-07-08",
+      "fechaTexto": "Julio de 1947",
+      "estado": "explicado",
+      "tipo": ["recuperación de restos", "militar"],
+      "empiezaAqui": null,
+      "gancho": "El mito fundacional. La Fuerza Aérea dijo 'platillo estrellado', se retractó al día siguiente, y tardó 47 años en contar el resto.",
+      "resumen": "En julio de 1947, la base aérea de Roswell anunció haber recuperado un 'disco volador' y se retractó horas después. Los informes oficiales de los años 90 identificaron los restos con el proyecto secreto Mogul.",
+      "queOcurrio": "El 8 de julio de 1947, la oficina de prensa del 509º Grupo de Bombardeo emitió un comunicado afirmando haber recuperado un 'disco volador' en un rancho cercano a Roswell; horas después el mando lo corrigió: era un globo meteorológico. El caso quedó olvidado hasta finales de los 70, cuando testimonios tardíos lo convirtieron en el mito OVNI por excelencia, incluyendo relatos de cuerpos no humanos. En 1994-1997, dos informes de la Fuerza Aérea de EE.UU., junto a una auditoría de la GAO, concluyeron que los restos pertenecían a un tren de globos del proyecto secreto Mogul (detección de pruebas nucleares soviéticas) y que los 'cuerpos' encajaban con maniquíes antropomorfos de pruebas de paracaídas de los años 50.",
+      "testigos": ["Mayor Jesse Marcel (oficial de inteligencia)", "William 'Mac' Brazel (ranchero)", "Testimonios tardíos recogidos desde 1978"],
+      "creyente": "La primera versión oficial —'hemos recuperado un disco'— la emitió la propia Fuerza Aérea, y la explicación definitiva tardó 47 años y dos informes en llegar. Marcel sostuvo hasta el final que los restos que le hicieron fotografiarse no eran los que recogió. Cuando la versión oficial cambia tres veces, la desconfianza no es paranoia.",
+      "esceptico": "Mogul era real, secreto y explica el material descrito (varillas, papel metalizado, neopreno). Los relatos de cuerpos aparecieron 30 años después, contaminados por décadas de ciencia ficción, y la investigación de la GAO no halló ningún registro de operación extraordinaria. Roswell es el mejor caso de estudio de cómo se construye un mito moderno.",
+      "documentos": [
+        {
+          "titulo": "Project Blue Book y documentación OVNI — National Archives (EE.UU.)",
+          "fuente": "NARA",
+          "url": "https://www.archives.gov/research/military/air-force/ufos.html"
+        },
+        {
+          "titulo": "Informe GAO sobre los registros de Roswell (1995)",
+          "fuente": "Government Accountability Office",
+          "url": "https://www.gao.gov/products/nsiad-95-187"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Archivos Blue Book digitalizados",
+          "url": "https://archive.org/details/nara-pbb"
+        }
+      ],
+      "relacionados": ["hill-1961", "nimitz-2004"]
+    },
+    {
+      "id": "hill-1961",
+      "titulo": "Betty y Barney Hill",
+      "pais": "Estados Unidos",
+      "lugar": "Carretera US-3, White Mountains (New Hampshire)",
+      "coordenadas": [44.09, -71.68],
+      "fecha": "1961-09-19",
+      "fechaTexto": "19-20 de septiembre de 1961",
+      "estado": "explicado",
+      "tipo": ["abducción", "encuentro cercano"],
+      "empiezaAqui": null,
+      "gancho": "La primera 'abducción' de la historia. Todo lo que crees saber sobre los alienígenas grises nace aquí.",
+      "resumen": "Un matrimonio de New Hampshire relató haber sido seguido por un objeto luminoso y, bajo hipnosis posterior, haber sido examinado a bordo por seres grises. Es el caso que fundó el fenómeno de las abducciones.",
+      "queOcurrio": "La noche del 19 al 20 de septiembre de 1961, Betty y Barney Hill volvían en coche de Canadá cuando observaron una luz que parecía seguirles. Llegaron a casa con la sensación de haber 'perdido' unas dos horas. Betty comenzó a tener pesadillas recurrentes y, en 1964, bajo hipnosis regresiva con el psiquiatra Benjamin Simon, ambos relataron por separado haber sido llevados a bordo de una nave y examinados por seres de ojos grandes y piel grisácea. El caso, popularizado por el libro 'The Interrupted Journey' (1966), creó el arquetipo del alienígena 'gris' y del examen médico a bordo que dominaría la cultura popular desde entonces. Su avistamiento inicial figura en los archivos de Project Blue Book.",
+      "testigos": ["Betty Hill", "Barney Hill", "Registro del avistamiento inicial en Blue Book"],
+      "creyente": "Dos relatos coincidentes bajo hipnosis por separado, un mapa estelar dibujado por Betty que algunos identificaron después con el sistema Zeta Reticuli, y un matrimonio respetado sin nada que ganar: los Hill nunca buscaron dinero ni fama.",
+      "esceptico": "El propio Dr. Simon concluyó que el relato era una fantasía compartida construida a partir de las pesadillas de Betty, que Barney absorbió al oírla contarlas durante años. La hipnosis regresiva no recupera recuerdos: los fabrica. Y los detalles del 'examen' calcan un episodio de 'The Outer Limits' emitido días antes de la primera sesión. El avistamiento inicial es consistente con el planeta Júpiter y un avión.",
+      "documentos": [
+        {
+          "titulo": "Archivos de Project Blue Book digitalizados",
+          "fuente": "NARA / Internet Archive",
+          "url": "https://archive.org/details/nara-pbb"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Project Blue Book — National Archives",
+          "url": "https://www.archives.gov/research/military/air-force/ufos.html"
+        }
+      ],
+      "relacionados": ["talavera-1976", "varginha-1996", "roswell-1947"]
+    },
+    {
+      "id": "rendlesham-1980",
+      "titulo": "El bosque de Rendlesham",
+      "pais": "Reino Unido",
+      "lugar": "Bosque de Rendlesham, junto a las bases RAF Woodbridge y RAF Bentwaters (Suffolk)",
+      "coordenadas": [52.088, 1.437],
+      "fecha": "1980-12-26",
+      "fechaTexto": "26-28 de diciembre de 1980",
+      "estado": "disputado",
+      "tipo": ["militar", "encuentro cercano", "trazas físicas"],
+      "empiezaAqui": null,
+      "gancho": "Militares de EE.UU. persiguiendo luces en un bosque inglés durante dos noches. Existe el memorándum oficial. Y una grabación de audio.",
+      "resumen": "Durante dos noches, personal de seguridad de la USAF destacado en Inglaterra investigó luces y un supuesto objeto en el bosque de Rendlesham. El subjefe de la base documentó los hechos en un memorándum oficial al Ministerio de Defensa británico.",
+      "queOcurrio": "En la madrugada del 26 de diciembre de 1980, patrullas de seguridad de la USAF en RAF Woodbridge se adentraron en el bosque de Rendlesham para investigar unas luces, y algunos testigos describieron un objeto metálico triangular entre los árboles; el sargento Jim Penniston afirmó haberlo tocado. Dos noches después, el teniente coronel Charles Halt encabezó otra patrulla que registró lecturas de radiación en el supuesto punto de aterrizaje y observó luces en movimiento, grabando sus impresiones en una cinta de audio que se conserva. Halt elevó el memorándum 'Unexplained Lights' al Ministerio de Defensa británico, documento hoy público en los archivos nacionales del Reino Unido.",
+      "testigos": ["Tte. Col. Charles Halt (subjefe de la base)", "Sgto. Jim Penniston", "A1C John Burroughs", "Patrullas de seguridad de la USAF"],
+      "creyente": "Militares profesionales de una base con armamento nuclear, dos noches consecutivas, un memorándum oficial, una cinta de audio grabada en tiempo real y lecturas de radiación: Rendlesham tiene el mejor soporte documental de cualquier encuentro cercano europeo.",
+      "esceptico": "El análisis escéptico (Ian Ridpath) encaja las piezas: un bólido brillante visible esa madrugada disparó la alerta, el faro de Orfordness —que barre el bosque exactamente en la dirección observada— explica la luz pulsante, y las 'lecturas de radiación' estaban dentro del fondo normal. Los relatos más espectaculares (tocar la nave, símbolos) crecieron años después con cada retelling.",
+      "documentos": [
+        {
+          "titulo": "Memorándum 'Unexplained Lights' y expedientes OVNI del Ministerio de Defensa británico",
+          "fuente": "The National Archives (Reino Unido)",
+          "url": "https://webarchive.nationalarchives.gov.uk/ukgwa/+/https://www.nationalarchives.gov.uk/ufos/"
+        },
+        {
+          "titulo": "Guía oficial de investigación de expedientes OVNI británicos",
+          "fuente": "The National Archives (Reino Unido)",
+          "url": "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/ufos/"
+        }
+      ],
+      "fuentes": [],
+      "relacionados": ["talavera-1976", "phoenix-1997"]
+    },
+    {
+      "id": "trans-en-provence-1981",
+      "titulo": "Trans-en-Provence",
+      "pais": "Francia",
+      "lugar": "Trans-en-Provence (Var, Francia)",
+      "coordenadas": [43.503, 6.487],
+      "fecha": "1981-01-08",
+      "fechaTexto": "8 de enero de 1981",
+      "estado": "disputado",
+      "tipo": ["aterrizaje", "trazas físicas"],
+      "empiezaAqui": 4,
+      "gancho": "El único caso OVNI de Europa con análisis de laboratorio estatal: el suelo quedó marcado y las plantas, alteradas.",
+      "resumen": "Un agricultor francés declaró haber visto aterrizar un objeto en su terreno. La gendarmería recogió muestras en 24 horas y el GEPAN (agencia espacial francesa) documentó trazas físicas en suelo y vegetación.",
+      "queOcurrio": "El 8 de enero de 1981, Renato Nicolaï, agricultor de 55 años, declaró haber observado un objeto con forma de dos platos invertidos que aterrizó brevemente en una terraza de su propiedad y despegó a gran velocidad. La gendarmería acudió al día siguiente y recogió muestras de suelo y vegetación, que el GEPAN (hoy GEIPAN, dependiente de la agencia espacial francesa CNES) analizó junto a laboratorios universitarios: se documentó una compactación del terreno atribuible a una presión considerable, trazas de calentamiento y una reducción de clorofila en las plantas cercanas cuya causa no se determinó. Es el caso con más análisis fisicoquímico de la casuística europea y uno de los emblemas de la categoría 'no identificado' del organismo francés.",
+      "testigos": ["Renato Nicolaï", "Gendarmería de Draguignan (recogida de muestras)"],
+      "creyente": "No es un testimonio: son análisis de laboratorio de un organismo estatal. Presión mecánica de cientos de kilos, calentamiento y alteración biológica medible en las plantas — y cuarenta años después ninguna explicación completa publicada.",
+      "esceptico": "Críticos como Eric Maillot han señalado que las trazas son compatibles con causas mundanas (neumáticos, hormigón depositado, trabajos agrícolas) y que la alteración de clorofila admite explicaciones convencionales; el testigo único y la topografía del lugar (una terraza poco visible desde la casa) debilitan el relato. El propio expediente reconoce que no puede establecerse la naturaleza del fenómeno.",
+      "documentos": [
+        {
+          "titulo": "Base de casos del GEIPAN (buscar 'Trans-en-Provence 1981')",
+          "fuente": "GEIPAN / CNES (agencia espacial francesa)",
+          "url": "https://www.cnes-geipan.fr/en/search/cas"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "GEIPAN — organismo oficial francés de fenómenos aeroespaciales no identificados",
+          "url": "https://www.cnes-geipan.fr/en/home"
+        }
+      ],
+      "relacionados": ["rendlesham-1980", "canarias-1976"]
+    },
+    {
+      "id": "phoenix-1997",
+      "titulo": "Las luces de Phoenix",
+      "pais": "Estados Unidos",
+      "lugar": "Phoenix y valle del Sol (Arizona)",
+      "coordenadas": [33.448, -112.074],
+      "fecha": "1997-03-13",
+      "fechaTexto": "13 de marzo de 1997",
+      "estado": "disputado",
+      "tipo": ["avistamiento masivo"],
+      "empiezaAqui": null,
+      "gancho": "Miles de personas, dos fenómenos distintos la misma noche, y un gobernador que se burló en rueda de prensa... y confesó años después haberlo visto.",
+      "resumen": "La noche del 13 de marzo de 1997, miles de personas en Arizona observaron una formación de luces en 'V' desplazándose en silencio y, horas después, una hilera de luces estáticas sobre Phoenix. El segundo fenómeno se atribuyó a bengalas militares; el primero sigue discutido.",
+      "queOcurrio": "Aquella noche se produjeron dos eventos que la memoria popular fundió en uno. Hacia las 20:30, testigos desde Nevada hasta Tucson describieron una formación de luces en 'V' o 'punta de flecha' que cruzó el estado en silencio; muchos afirmaron que era un único objeto enorme que ocultaba las estrellas. Hacia las 22:00, una hilera de luces brillantes quedó suspendida sobre el horizonte suroeste de Phoenix, fue grabada en múltiples vídeos y se convirtió en la imagen icónica del caso. La Guardia Nacional Aérea confirmó que a esa hora un escuadrón A-10 lanzó bengalas de iluminación sobre el campo de tiro de Barry Goldwater. El gobernador Fife Symington ridiculizó el asunto en una rueda de prensa disfrazando a un asesor de alienígena; en 2007 declaró públicamente que él también había visto el objeto y que lo consideraba inexplicable.",
+      "testigos": ["Miles de testigos en Arizona", "Fife Symington (gobernador, testimonio en 2007)", "Múltiples grabaciones de vídeo del evento de las 22:00"],
+      "creyente": "Las bengalas solo explican el evento de las 22:00. La formación silenciosa de las 20:30 —vista por miles de personas a lo largo de cientos de kilómetros, descrita como un objeto sólido que tapaba las estrellas— nunca ha tenido explicación oficial detallada. Hasta el gobernador que se rió del caso acabó admitiendo que lo vio.",
+      "esceptico": "El evento de las 20:30 es consistente con una formación de aviones A-10 en tránsito a gran altitud: luces en V, sin sonido audible por la distancia, y la 'ocultación de estrellas' es un efecto perceptivo nocturno bien documentado (el cerebro rellena un contorno entre luces en formación). El de las 22:00 está resuelto: bengalas LUU-2 descendiendo tras la línea de montañas.",
+      "documentos": [],
+      "fuentes": [
+        {
+          "titulo": "Cobertura y análisis del caso (evento de bengalas confirmado por la 104th Fighter Squadron)",
+          "url": "https://www.archives.gov/research/military/air-force/ufos.html"
+        }
+      ],
+      "relacionados": ["rendlesham-1980", "nimitz-2004"]
+    },
+    {
+      "id": "nimitz-2004",
+      "titulo": "USS Nimitz: el 'Tic-Tac'",
+      "pais": "Estados Unidos",
+      "lugar": "Océano Pacífico, frente a San Diego (California)",
+      "coordenadas": [31.5, -117.9],
+      "fecha": "2004-11-14",
+      "fechaTexto": "14 de noviembre de 2004",
+      "estado": "sin_explicar",
+      "tipo": ["militar", "radar", "vídeo oficial"],
+      "empiezaAqui": 5,
+      "gancho": "Pilotos de combate, radar de última generación, vídeo infrarrojo desclasificado por el Pentágono y testimonio bajo juramento ante el Congreso. El caso moderno de referencia.",
+      "resumen": "Pilotos de F/A-18 del grupo de combate del USS Nimitz interceptaron un objeto blanco con forma de 'tic-tac' que maniobró de forma inexplicable. El vídeo FLIR es oficial, y el piloto declaró bajo juramento ante el Congreso de EE.UU.",
+      "queOcurrio": "El 14 de noviembre de 2004, el crucero USS Princeton, que llevaba días detectando trazas de radar anómalas, dirigió a dos F/A-18F del USS Nimitz hacia un contacto. Los pilotos David Fravor y Alex Dietrich observaron un objeto blanco liso, sin alas ni escapes, del tamaño aproximado de su caza, que se movía erráticamente sobre una zona de mar agitada. Según el testimonio de Fravor, cuando descendió hacia él, el objeto se reposicionó como reaccionando y aceleró desapareciendo en segundos; minutos después el radar lo recaptó a decenas de kilómetros. Una segunda salida grabó el vídeo infrarrojo 'FLIR1', desclasificado oficialmente por el Pentágono en 2020 y publicado hoy en la web de AARO. Fravor testificó bajo juramento ante el Congreso el 26 de julio de 2023. El caso no tiene explicación oficial.",
+      "testigos": ["Cte. David Fravor (piloto, testimonio ante el Congreso)", "Tte. Alex Dietrich (piloto)", "Operadores de radar del USS Princeton", "Tripulaciones de la segunda salida (vídeo FLIR1)"],
+      "creyente": "Cuatro aviadores en dos cazas, radar Aegis, cámara infrarroja y testimonio bajo juramento: es la cadena de evidencia militar más sólida jamás hecha pública. Y la respuesta oficial del Pentágono, veinte años después, sigue siendo 'no identificado'.",
+      "esceptico": "Cada pieza por separado admite duda razonable: el radar del Princeton pudo sufrir errores de calibración tras un mantenimiento reciente, el vídeo FLIR muestra artefactos ópticos compatibles con un objeto lejano convencional y el giro brusco del final es la propia cámara. La percepción de aceleraciones imposibles desde un caza en maniobra es notoriamente engañosa. Lo extraordinario exige más que la suma de anomalías sueltas.",
+      "documentos": [
+        {
+          "titulo": "Vídeos oficiales UAP de la Navy (FLIR, Gimbal, GoFast) — AARO, Pentágono",
+          "fuente": "All-domain Anomaly Resolution Office (Dpto. de Defensa de EE.UU.)",
+          "url": "https://www.aaro.mil/UAP-Cases/Official-UAP-Imagery/"
+        },
+        {
+          "titulo": "Transcripción oficial de la audiencia del Congreso (26-07-2023) con testimonio de Fravor",
+          "fuente": "Congreso de EE.UU.",
+          "url": "https://www.congress.gov/118/meeting/house/116282/documents/HHRG-118-GO06-Transcript-20230726.pdf"
+        },
+        {
+          "titulo": "Publicación FOIA original de los vídeos (2020)",
+          "fuente": "NAVAIR (US Navy)",
+          "url": "https://www.navair.navy.mil/foia/documents"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "AARO — oficina oficial UAP del Pentágono",
+          "url": "https://www.aaro.mil/"
+        }
+      ],
+      "relacionados": ["manises-1979", "phoenix-1997", "roswell-1947"]
+    },
+    {
+      "id": "varginha-1996",
+      "titulo": "Varginha: el 'ET de Brasil'",
+      "pais": "Brasil",
+      "lugar": "Varginha (Minas Gerais, Brasil)",
+      "coordenadas": [-21.551, -45.43],
+      "fecha": "1996-01-20",
+      "fechaTexto": "20 de enero de 1996",
+      "estado": "explicado",
+      "tipo": ["humanoide", "fenómeno cultural"],
+      "empiezaAqui": null,
+      "gancho": "Tres chicas, una criatura agachada bajo la lluvia y una ciudad entera convertida en parque temático alienígena. Anatomía de un mito moderno.",
+      "resumen": "Tres jóvenes de Varginha relataron haber visto una criatura extraña agachada junto a un muro. El caso creció hasta incluir capturas militares y hospitales secretos sin que exista documentación oficial que lo respalde; la investigación posterior apunta a una explicación mundana.",
+      "queOcurrio": "El 20 de enero de 1996, tres jóvenes —las hermanas Liliane y Valquíria da Silva y su amiga Kátia Xavier— relataron haber visto en un solar de Varginha una criatura parda, de ojos rojos y aspecto extraño, agachada bajo la lluvia. El relato creció en semanas hasta un supuesto operativo militar de captura de una o varias criaturas, traslados a hospitales y autopsias secretas, convirtiendo a Varginha en la 'Roswell brasileña' y en destino turístico alienígena. El Ejército brasileño negó cualquier operativo, y ninguna investigación ha aportado documentación oficial ni evidencia física. Los investigadores escépticos identificaron un candidato plausible para la 'criatura': un vecino con discapacidad mental y física, conocido en la zona, que solía refugiarse agachado junto a ese muro los días de lluvia.",
+      "testigos": ["Liliane da Silva", "Valquíria da Silva", "Kátia Xavier"],
+      "creyente": "Demasiados testimonios independientes en muy pocos días: militares que hablaron off the record, actividad hospitalaria anómala y la muerte semanas después de un policía que habría manipulado a la criatura. La negación oficial, en Brasil de 1996, vale lo que vale.",
+      "esceptico": "El caso es un ejemplo de libro de leyenda urbana en tiempo real: un estímulo banal (una persona vulnerable agachada bajo la lluvia), tres testigos asustadas, prensa local hambrienta y una bola de nieve de rumores sin un solo documento, foto o evidencia física en treinta años. La muerte del policía fue por infección documentada médicamente. Se incluye aquí como caso de estudio de cómo nace un mito.",
+      "documentos": [],
+      "fuentes": [
+        {
+          "titulo": "Sin documentación oficial: se presenta como fenómeno cultural documentado por investigación periodística y escéptica",
+          "url": "https://es.wikipedia.org/wiki/Caso_Varginha"
+        }
+      ],
+      "relacionados": ["hill-1961", "talavera-1976", "roswell-1947"]
+    }
+  ]
+}

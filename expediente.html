@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expediente — EXPEDIENTE UMBRA</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛸</text></svg>">
+</head>
+<body data-pagina="expediente" data-modo="creyente">
+
+  <header class="cabecera">
+    <div class="cabecera-superior">
+      <div class="marca">
+        <a href="index.html">
+          <div class="titulo-sitio">EXPEDIENTE <span class="u">UMBRA</span></div>
+          <div class="lema">Archivo desclasificado · La verdad está en los documentos</div>
+        </a>
+      </div>
+      <div class="modo" title="Cambia entre las dos lecturas de cada caso">
+        <span class="etiqueta-modo etiqueta-creyente">Creyente</span>
+        <div class="interruptor" id="interruptor-modo" role="switch" aria-label="Cambiar entre modo creyente y modo escéptico"></div>
+        <span class="etiqueta-modo etiqueta-esceptico">Escéptico</span>
+      </div>
+    </div>
+    <div class="barra-estado">
+      <div class="contenido-barra">
+        <span class="dato"><a href="index.html">&larr; Volver al archivo</a></span>
+        <span class="dato"><a href="archivos.html">Sala de archivos</a></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <div id="expediente"></div>
+  </main>
+
+  <footer class="pie">
+    <p class="contador-encubrimiento">DÍAS DESDE EL ÚLTIMO ENCUBRIMIENTO: 0</p>
+    <p class="nota-honesta">
+      Cada expediente presenta los hechos documentados y sus dos lecturas.
+      Usa el interruptor de arriba para cambiar de bando.
+    </p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

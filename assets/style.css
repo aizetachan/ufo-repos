@@ -1,0 +1,527 @@
+/* ============================================================
+   EXPEDIENTE UMBRA — estética dossier desclasificado / X-Files
+   ============================================================ */
+
+:root {
+  --negro: #060806;
+  --papel: #0c100c;
+  --papel-2: #111611;
+  --linea: #1e2a1e;
+  --tinta: #c9d4c9;
+  --tinta-tenue: #7a8a7a;
+  --fosforo: #35e06b;
+  --fosforo-tenue: rgba(53, 224, 107, 0.12);
+  --rojo: #ff3b30;
+  --rojo-tenue: rgba(255, 59, 48, 0.12);
+  --ambar: #e8b23a;
+  --ambar-tenue: rgba(232, 178, 58, 0.12);
+  --mono: "Courier New", Courier, "Lucida Console", monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--negro);
+  color: var(--tinta);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.65;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Grano + scanlines sobre toda la página */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.13) 0px,
+      rgba(0, 0, 0, 0.13) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  opacity: 0.5;
+}
+
+a { color: var(--fosforo); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  border-bottom: 1px solid var(--linea);
+  background: linear-gradient(180deg, #0a0d0a 0%, var(--negro) 100%);
+  padding: 14px 20px 0;
+}
+
+.cabecera-superior {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+}
+
+.marca { line-height: 1.2; }
+.marca a { color: var(--tinta); }
+.marca a:hover { text-decoration: none; }
+
+.marca .titulo-sitio {
+  font-size: 22px;
+  letter-spacing: 6px;
+  font-weight: bold;
+  animation: parpadeo 9s infinite;
+}
+.marca .titulo-sitio .u { color: var(--fosforo); }
+
+.marca .lema {
+  font-size: 10.5px;
+  letter-spacing: 2.5px;
+  color: var(--tinta-tenue);
+  text-transform: uppercase;
+}
+
+@keyframes parpadeo {
+  0%, 91%, 93.5%, 100% { opacity: 1; }
+  92%, 93% { opacity: 0.55; }
+}
+
+/* Interruptor Creyente/Escéptico */
+.modo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  user-select: none;
+}
+.modo .etiqueta-modo { color: var(--tinta-tenue); transition: color 0.25s; }
+body[data-modo="creyente"] .etiqueta-creyente { color: var(--fosforo); }
+body[data-modo="esceptico"] .etiqueta-esceptico { color: var(--ambar); }
+
+.interruptor {
+  width: 52px;
+  height: 24px;
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  background: var(--papel-2);
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.interruptor::after {
+  content: "";
+  position: absolute;
+  top: 3px; left: 4px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--fosforo);
+  box-shadow: 0 0 8px var(--fosforo);
+  transition: left 0.25s, background 0.25s, box-shadow 0.25s;
+}
+body[data-modo="esceptico"] .interruptor::after {
+  left: 30px;
+  background: var(--ambar);
+  box-shadow: 0 0 8px var(--ambar);
+}
+
+/* Barra de estado bajo la cabecera */
+.barra-estado {
+  border-top: 1px solid var(--linea);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--tinta-tenue);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.barra-estado .contenido-barra {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 6px 0;
+  display: flex;
+  gap: 28px;
+}
+.barra-estado .dato b { color: var(--fosforo); font-weight: normal; }
+.barra-estado .alerta b { color: var(--rojo); font-weight: normal; }
+
+/* ---------- Contenedor ---------- */
+.contenedor {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+/* ---------- Sello CLASIFICADO ---------- */
+.sello {
+  display: inline-block;
+  border: 2px solid var(--rojo);
+  color: var(--rojo);
+  padding: 2px 12px;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transform: rotate(-4deg);
+  opacity: 0.85;
+  border-radius: 2px;
+}
+.sello.verde { border-color: var(--fosforo); color: var(--fosforo); transform: rotate(3deg); }
+
+/* ---------- Texto censurado ---------- */
+.censurado {
+  background: #000;
+  color: #000;
+  padding: 0 6px;
+  cursor: help;
+  transition: color 0.4s, background 0.4s;
+  box-shadow: inset 0 0 0 1px #151515;
+}
+.censurado:hover { background: var(--fosforo-tenue); color: var(--fosforo); }
+
+/* ---------- Etiquetas de estado ---------- */
+.estado {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border: 1px solid;
+  border-radius: 2px;
+}
+.estado-sin_explicar { color: var(--rojo); border-color: var(--rojo); background: var(--rojo-tenue); animation: pulso-rojo 2.4s infinite; }
+.estado-disputado { color: var(--ambar); border-color: var(--ambar); background: var(--ambar-tenue); }
+.estado-explicado { color: var(--tinta-tenue); border-color: var(--tinta-tenue); }
+
+@keyframes pulso-rojo {
+  0%, 100% { box-shadow: 0 0 0 rgba(255, 59, 48, 0); }
+  50% { box-shadow: 0 0 12px rgba(255, 59, 48, 0.45); }
+}
+
+/* ---------- Portada: expediente del día ---------- */
+.seccion-titulo {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--tinta-tenue);
+  border-bottom: 1px solid var(--linea);
+  padding-bottom: 8px;
+  margin: 38px 0 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.seccion-titulo .cursor::after {
+  content: "▮";
+  color: var(--fosforo);
+  animation: cursor 1.1s steps(1) infinite;
+}
+@keyframes cursor { 50% { opacity: 0; } }
+
+.destacado {
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  padding: 26px 26px 22px;
+  position: relative;
+  display: block;
+  color: var(--tinta);
+}
+.destacado:hover { text-decoration: none; border-color: var(--fosforo); }
+.destacado .sello { position: absolute; top: 14px; right: 16px; }
+.destacado h2 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin: 8px 0 4px;
+  text-transform: uppercase;
+  color: #e8f0e8;
+}
+.destacado .meta { font-size: 12px; color: var(--tinta-tenue); letter-spacing: 1px; }
+.destacado .gancho { margin-top: 12px; color: var(--tinta); max-width: 720px; }
+.destacado .abrir {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--fosforo);
+  border: 1px solid var(--fosforo);
+  padding: 7px 18px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.destacado:hover .abrir { background: var(--fosforo-tenue); }
+
+/* ---------- Ruta empieza aquí ---------- */
+.ruta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  counter-reset: paso;
+}
+.ruta a {
+  counter-increment: paso;
+  border: 1px dashed var(--linea);
+  background: var(--papel);
+  color: var(--tinta);
+  padding: 10px 14px;
+  font-size: 12.5px;
+  flex: 1 1 170px;
+  min-width: 150px;
+}
+.ruta a:hover { border-color: var(--fosforo); text-decoration: none; color: var(--fosforo); }
+.ruta a::before {
+  content: "PASO " counter(paso);
+  display: block;
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  color: var(--fosforo);
+  margin-bottom: 4px;
+}
+
+/* ---------- Filtros ---------- */
+.filtros { display: flex; gap: 8px; flex-wrap: wrap; }
+.filtros button {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--tinta-tenue);
+  border: 1px solid var(--linea);
+  padding: 5px 12px;
+  cursor: pointer;
+}
+.filtros button:hover { color: var(--tinta); border-color: var(--tinta-tenue); }
+.filtros button.activo { color: var(--fosforo); border-color: var(--fosforo); background: var(--fosforo-tenue); }
+
+/* ---------- Rejilla de casos ---------- */
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.ficha-caso {
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  padding: 18px;
+  color: var(--tinta);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ficha-caso:hover { border-color: var(--fosforo); text-decoration: none; transform: translateY(-2px); }
+.ficha-caso .ref {
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  color: var(--tinta-tenue);
+  text-transform: uppercase;
+}
+.ficha-caso h3 { font-size: 17px; text-transform: uppercase; letter-spacing: 0.5px; color: #e8f0e8; }
+.ficha-caso .lugar-fecha { font-size: 11.5px; color: var(--tinta-tenue); }
+.ficha-caso p { font-size: 13px; color: var(--tinta); }
+.ficha-caso .pie-ficha {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.ficha-caso .doc-si {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--fosforo);
+  text-transform: uppercase;
+}
+
+/* ---------- Página de expediente ---------- */
+.expediente-cabecera {
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  padding: 26px;
+  position: relative;
+  margin-bottom: 26px;
+}
+.expediente-cabecera .sello { position: absolute; top: 16px; right: 18px; }
+.expediente-cabecera h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #e8f0e8;
+  margin: 10px 0 6px;
+  max-width: 80%;
+}
+.expediente-cabecera .meta {
+  font-size: 12px;
+  color: var(--tinta-tenue);
+  letter-spacing: 1px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.expediente-cabecera .meta b { color: var(--tinta); font-weight: normal; }
+
+.bloque {
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  padding: 22px 24px;
+  margin-bottom: 18px;
+}
+.bloque h2 {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--fosforo);
+  margin-bottom: 12px;
+}
+.bloque p + p { margin-top: 12px; }
+.bloque ul { list-style: none; }
+.bloque ul li { padding: 5px 0 5px 18px; position: relative; }
+.bloque ul li::before { content: ">"; position: absolute; left: 0; color: var(--fosforo); }
+
+/* Las dos versiones (toggle) */
+.version { border-left: 3px solid; padding-left: 18px; }
+.version-creyente { border-color: var(--fosforo); }
+.version-esceptico { border-color: var(--ambar); }
+.version .quien {
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.version-creyente .quien { color: var(--fosforo); }
+.version-esceptico .quien { color: var(--ambar); }
+
+body[data-modo="creyente"] .solo-esceptico { display: none; }
+body[data-modo="esceptico"] .solo-creyente { display: none; }
+
+.aviso-otra-version {
+  font-size: 11px;
+  color: var(--tinta-tenue);
+  margin-top: 12px;
+  cursor: pointer;
+  text-decoration: underline dotted;
+}
+.aviso-otra-version:hover { color: var(--tinta); }
+
+/* Documentos originales */
+.doc-original {
+  display: block;
+  border: 1px solid var(--fosforo);
+  background: var(--fosforo-tenue);
+  color: var(--fosforo);
+  padding: 13px 16px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.doc-original:hover { background: rgba(53, 224, 107, 0.2); text-decoration: none; }
+.doc-original .fuente-doc {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--tinta-tenue);
+  margin-top: 3px;
+}
+.doc-original::before { content: "▸ VER DOCUMENTO ORIGINAL — "; letter-spacing: 1px; font-size: 11px; }
+
+.sin-docs {
+  font-size: 12.5px;
+  color: var(--tinta-tenue);
+  border: 1px dashed var(--linea);
+  padding: 12px 16px;
+}
+
+/* Relacionados */
+.relacionados-lista { display: flex; gap: 10px; flex-wrap: wrap; }
+.relacionados-lista a {
+  border: 1px solid var(--linea);
+  padding: 8px 14px;
+  font-size: 12px;
+  color: var(--tinta);
+  background: var(--papel-2);
+}
+.relacionados-lista a:hover { border-color: var(--fosforo); color: var(--fosforo); text-decoration: none; }
+
+/* ---------- Página de archivos ---------- */
+.tabla-archivos { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tabla-archivos th, .tabla-archivos td {
+  border: 1px solid var(--linea);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.tabla-archivos th {
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tinta-tenue);
+  background: var(--papel-2);
+}
+.envoltura-tabla { overflow-x: auto; }
+
+/* ---------- Pie ---------- */
+.pie {
+  border-top: 1px solid var(--linea);
+  padding: 26px 20px 40px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--tinta-tenue);
+  letter-spacing: 1px;
+}
+.pie .contador-encubrimiento { color: var(--rojo); }
+.pie p + p { margin-top: 8px; }
+.pie .nota-honesta { max-width: 640px; margin: 14px auto 0; line-height: 1.7; }
+
+/* ---------- Intro terminal ---------- */
+#terminal-intro {
+  position: fixed;
+  inset: 0;
+  background: var(--negro);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+#terminal-intro.oculto { opacity: 0; pointer-events: none; }
+#terminal-intro pre {
+  font-family: var(--mono);
+  color: var(--fosforo);
+  font-size: 14px;
+  line-height: 1.9;
+  text-shadow: 0 0 6px rgba(53, 224, 107, 0.5);
+  padding: 20px;
+}
+#terminal-intro .pista {
+  position: absolute;
+  bottom: 24px;
+  width: 100%;
+  text-align: center;
+  color: var(--tinta-tenue);
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .expediente-cabecera h1 { font-size: 22px; max-width: 100%; }
+  .expediente-cabecera .sello, .destacado .sello { position: static; display: inline-block; margin-bottom: 6px; }
+  .marca .titulo-sitio { font-size: 18px; letter-spacing: 4px; }
+  .barra-estado .contenido-barra { gap: 16px; }
+}

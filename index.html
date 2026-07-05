@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXPEDIENTE UMBRA — Archivo OVNI desclasificado</title>
+  <meta name="description" content="Casos OVNI/UAP documentados con fuentes oficiales: expedientes desclasificados del Ejército del Aire español, Project Blue Book, AARO y más. Cada caso, con su documento original.">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛸</text></svg>">
+</head>
+<body data-pagina="portada" data-modo="creyente">
+
+  <div id="terminal-intro">
+    <pre></pre>
+    <div class="pista">[ pulsa para saltar ]</div>
+  </div>
+
+  <header class="cabecera">
+    <div class="cabecera-superior">
+      <div class="marca">
+        <a href="index.html">
+          <div class="titulo-sitio">EXPEDIENTE <span class="u">UMBRA</span></div>
+          <div class="lema">Archivo desclasificado · La verdad está en los documentos</div>
+        </a>
+      </div>
+      <div class="modo" title="Cambia entre las dos lecturas de cada caso">
+        <span class="etiqueta-modo etiqueta-creyente">Creyente</span>
+        <div class="interruptor" id="interruptor-modo" role="switch" aria-label="Cambiar entre modo creyente y modo escéptico"></div>
+        <span class="etiqueta-modo etiqueta-esceptico">Escéptico</span>
+      </div>
+    </div>
+    <div class="barra-estado">
+      <div class="contenido-barra">
+        <span class="dato"><b>80</b> expedientes desclasificados (España)</span>
+        <span class="dato"><b>12.618</b> casos Project Blue Book</span>
+        <span class="dato"><b>3,1%</b> sin identificar tras investigación (GEIPAN, Francia)</span>
+        <span class="alerta">Nivel de alerta: <b>ÁMBAR</b></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <div class="seccion-titulo">
+      <span class="cursor">EXPEDIENTE DEL DÍA</span>
+      <span class="sello verde">Acceso concedido</span>
+    </div>
+    <div id="destacado"></div>
+
+    <div class="seccion-titulo"><span>¿NUEVO EN ESTO? — EMPIEZA AQUÍ</span></div>
+    <p style="font-size:13px;color:var(--tinta-tenue);margin-bottom:14px">
+      Cinco casos en orden para entender el fenómeno de cero: del primer expediente español de 1962 al vídeo del Pentágono de 2004.
+    </p>
+    <div class="ruta" id="ruta"></div>
+
+    <div class="seccion-titulo">
+      <span>TODOS LOS EXPEDIENTES</span>
+      <div class="filtros">
+        <button class="activo" data-filtro="todos">Todos</button>
+        <button data-filtro="espana">España</button>
+        <button data-filtro="internacional">Internacional</button>
+        <button data-filtro="sin_explicar">Sin explicar</button>
+        <button data-filtro="disputado">Disputados</button>
+      </div>
+    </div>
+    <div class="rejilla" id="lista-casos"></div>
+
+    <div class="seccion-titulo"><span>LA SALA DE ARCHIVOS</span></div>
+    <p style="font-size:13.5px;max-width:760px">
+      No nos creas a nosotros: ve a los documentos. Hemos reunido los enlaces verificados a los
+      archivos OVNI desclasificados de España, Estados Unidos, Reino Unido y Francia —
+      <a href="archivos.html">entra en la sala de archivos</a>.
+    </p>
+
+  </main>
+
+  <footer class="pie">
+    <p class="contador-encubrimiento">DÍAS DESDE EL ÚLTIMO ENCUBRIMIENTO: 0</p>
+    <p class="nota-honesta">
+      EXPEDIENTE UMBRA es un proyecto de divulgación: la estética es de dossier clasificado,
+      pero cada dato enlaza a su fuente oficial. Los modos <span style="color:var(--fosforo)">creyente</span>
+      y <span style="color:var(--ambar)">escéptico</span> presentan las dos lecturas documentadas de cada caso.
+      Tú decides.
+    </p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
