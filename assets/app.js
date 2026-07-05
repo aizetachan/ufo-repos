@@ -501,8 +501,37 @@ function iniciarKonami() {
   let pos = 0;
   document.addEventListener("keydown", (e) => {
     pos = e.key === secuencia[pos] ? pos + 1 : e.key === secuencia[0] ? 1 : 0;
-    if (pos !== secuencia.length) return;
-    pos = 0;
+    if (pos === secuencia.length) {
+      pos = 0;
+      mostrarExpedienteProhibido();
+    }
+  });
+
+  // Versión táctil: la misma secuencia direccional con swipes (sin B-A).
+  const gestos = ["arriba","arriba","abajo","abajo","izquierda","derecha","izquierda","derecha"];
+  let posTactil = 0;
+  let inicioToque = null;
+  document.addEventListener("touchstart", (e) => {
+    inicioToque = { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() };
+  }, { passive: true });
+  document.addEventListener("touchend", (e) => {
+    if (!inicioToque) return;
+    const dx = e.changedTouches[0].clientX - inicioToque.x;
+    const dy = e.changedTouches[0].clientY - inicioToque.y;
+    const rapido = Date.now() - inicioToque.t < 800;
+    inicioToque = null;
+    if (!rapido || (Math.abs(dx) < 40 && Math.abs(dy) < 40)) return;
+    const gesto = Math.abs(dx) > Math.abs(dy)
+      ? (dx > 0 ? "derecha" : "izquierda")
+      : (dy > 0 ? "abajo" : "arriba");
+    posTactil = gesto === gestos[posTactil] ? posTactil + 1 : gesto === gestos[0] ? 1 : 0;
+    if (posTactil === gestos.length) {
+      posTactil = 0;
+      mostrarExpedienteProhibido();
+    }
+  }, { passive: true });
+
+  function mostrarExpedienteProhibido() {
     if (document.getElementById("expediente-prohibido")) return;
     const div = document.createElement("div");
     div.id = "expediente-prohibido";
@@ -523,7 +552,7 @@ function iniciarKonami() {
       </div>`;
     document.body.appendChild(div);
     div.querySelector(".cerrar-prohibido").addEventListener("click", () => div.remove());
-  });
+  }
 }
 
 /* ---------- Arranque ---------- */
