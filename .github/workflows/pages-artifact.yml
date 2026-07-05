@@ -4,6 +4,8 @@ name: Pages por artefacto (plan B)
 # con actions/deploy-pages, sin pasar por el build interno de la rama
 # gh-pages. Requiere que el origen de Pages sea "GitHub Actions".
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
