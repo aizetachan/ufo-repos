@@ -193,6 +193,58 @@ async function iniciarCronologia() {
   cont.innerHTML = html;
 }
 
+/* ---------- Archivo español (80 expedientes) ---------- */
+async function iniciarArchivoEspanol() {
+  const casos = await cargarCasos();
+  const resp = await fetch("data/archivo-espanol.json");
+  const datos = await resp.json();
+
+  // idValor de los expedientes que ya tienen ficha completa en la web
+  const conFicha = {};
+  for (const c of casos) {
+    for (const d of c.documentos || []) {
+      const m = d.url.match(/idValor=(\d+)/);
+      if (m) conFicha[m[1]] = c.id;
+    }
+  }
+
+  const porAnio = new Map();
+  for (const e of datos.expedientes) {
+    if (!porAnio.has(e.anio)) porAnio.set(e.anio, []);
+    porAnio.get(e.anio).push(e);
+  }
+
+  let html = "";
+  for (const [anio, exps] of [...porAnio.entries()].sort((a, b) => a[0] - b[0])) {
+    const filas = exps
+      .map((e) => {
+        const fichaId = conFicha[e.idValor];
+        return `
+        <div class="exp-linea">
+          <span>${esc(e.titulo)}${fichaId ? ` <a href="expediente.html?id=${encodeURIComponent(fichaId)}" style="color:var(--ambar)">[ficha completa ★]</a>` : ""}</span>
+          <a class="ver-exp" href="${esc(e.url)}" target="_blank" rel="noopener">VER EXPEDIENTE ▸</a>
+        </div>`;
+      })
+      .join("");
+    html += `
+      <details class="grupo-anio" ${exps.length >= 7 ? "" : ""}>
+        <summary>${anio} <span class="n-exp">${exps.length} expediente${exps.length > 1 ? "s" : ""}</span></summary>
+        <div class="expedientes-anio">${filas}</div>
+      </details>`;
+  }
+  document.getElementById("archivo-espanol").innerHTML = html;
+
+  document.getElementById("archivo-docs").innerHTML = datos.documentacion
+    .map(
+      (d) => `
+      <div class="exp-linea" style="border:1px solid var(--linea);margin-bottom:8px">
+        <span>${esc(d.titulo)}</span>
+        <a class="ver-exp" href="${esc(d.url)}" target="_blank" rel="noopener">VER ▸</a>
+      </div>`
+    )
+    .join("");
+}
+
 /* ---------- Portada ---------- */
 async function iniciarPortada() {
   const casos = await cargarCasos();
@@ -335,4 +387,5 @@ document.addEventListener("DOMContentLoaded", () => {
   if (pagina === "expediente") iniciarExpediente();
   if (pagina === "bestiario") iniciarBestiario();
   if (pagina === "cronologia") iniciarCronologia();
+  if (pagina === "archivo-espanol") iniciarArchivoEspanol();
 });

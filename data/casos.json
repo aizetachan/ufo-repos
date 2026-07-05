@@ -464,6 +464,123 @@
         }
       ],
       "relacionados": ["hill-1961", "talavera-1976", "roswell-1947"]
+    },
+    {
+      "id": "levelland-1957",
+      "titulo": "Levelland: los coches apagados",
+      "pais": "Estados Unidos",
+      "lugar": "Levelland (Texas)",
+      "coordenadas": [33.587, -102.378],
+      "fecha": "1957-11-02",
+      "fechaTexto": "Noche del 2 al 3 de noviembre de 1957",
+      "estado": "disputado",
+      "tipo": ["efectos electromagnéticos", "avistamiento múltiple"],
+      "empiezaAqui": null,
+      "gancho": "Una decena de conductores, la misma noche, la misma historia: un objeto luminoso y el motor muerto. La explicación oficial: un 'rayo globular'.",
+      "resumen": "Durante unas tres horas, conductores de la zona de Levelland reportaron por separado un gran objeto luminoso en forma de huevo cuyo paso coincidía con el fallo de motores, faros y radios de sus vehículos. Project Blue Book lo atribuyó a un fenómeno eléctrico atmosférico.",
+      "queOcurrio": "La noche del 2 al 3 de noviembre de 1957, la comisaría de Levelland recibió una cadena de llamadas independientes: conductores en distintas carreteras del condado describían un objeto brillante de gran tamaño, en ocasiones posado sobre la calzada, y coincidían en un detalle insólito: al acercarse, los motores se calaban y las luces se apagaban, recuperándose al alejarse el objeto. El sheriff Weir Clem salió a investigar y reportó también una luz brillante. Blue Book despachó el caso en un día de investigación sobre el terreno y lo atribuyó a un 'rayo globular' asociado a una tormenta eléctrica en la zona — una explicación que recurre a un fenómeno cuya propia existencia sigue siendo objeto de estudio.",
+      "testigos": ["Al menos una decena de conductores independientes", "Sheriff Weir Clem", "Registros de llamadas de la comisaría"],
+      "creyente": "Testigos que no se conocían, en carreteras distintas, describiendo el mismo objeto y el mismo efecto sobre sus vehículos en una ventana de tres horas. El interferencia electromagnética sobre motores es un patrón que se repite en la casuística mundial — y que un 'rayo globular' de tres horas de duración no explica.",
+      "esceptico": "Había tormentas eléctricas en la zona esa noche: la propia comisaría lo registró. Los fallos de motor en vehículos de los años 50 eran comunes con humedad alta, y el efecto psicológico de una luz inusual hace el resto: el conductor asustado que se detiene atribuye al objeto un calado que él mismo provocó. La investigación de Blue Book fue pobre, cierto — pero eso no convierte el caso en inexplicable.",
+      "documentos": [
+        {
+          "titulo": "Expediente de Levelland en los archivos de Project Blue Book",
+          "fuente": "NARA / Internet Archive",
+          "url": "https://archive.org/details/nara-pbb"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Project Blue Book — National Archives",
+          "url": "https://www.archives.gov/research/military/air-force/ufos.html"
+        }
+      ],
+      "relacionados": ["manises-1979", "roswell-1947"]
+    },
+    {
+      "id": "tehran-1976",
+      "titulo": "Los F-4 de Teherán",
+      "pais": "Irán",
+      "lugar": "Espacio aéreo de Teherán (Irán)",
+      "coordenadas": [35.689, 51.389],
+      "fecha": "1976-09-19",
+      "fechaTexto": "19 de septiembre de 1976",
+      "estado": "disputado",
+      "tipo": ["militar", "interceptación", "fallo de sistemas"],
+      "empiezaAqui": null,
+      "gancho": "El piloto apuntó, apretó el disparador... y el panel de armas se apagó. El informe de la agencia de inteligencia militar de EE.UU. existe y es público.",
+      "resumen": "Dos cazas F-4 iraníes fueron enviados a interceptar un objeto brillante sobre Teherán. Ambos reportaron fallos de instrumentos al aproximarse; el segundo perdió el control de armamento al intentar disparar un misil. El caso quedó documentado en un informe de la DIA estadounidense.",
+      "queOcurrio": "La madrugada del 19 de septiembre de 1976, tras múltiples llamadas de ciudadanos, la Fuerza Aérea iraní envió un F-4 Phantom II hacia un objeto luminoso; a unas 25 millas náuticas el caza perdió instrumentación y comunicaciones, que se recuperaron al alejarse. Un segundo F-4, pilotado por Parviz Jafari (después general), obtuvo retorno de radar del objeto y, cuando un objeto menor se desprendió de él y se le aproximó, intentó lanzar un misil AIM-9: en ese instante su panel de armas y parte de la aviónica dejaron de funcionar. El encuentro fue recogido en un memorando de la Defense Intelligence Agency de EE.UU. que calificó el caso como 'un clásico que reúne todos los criterios necesarios para un estudio válido del fenómeno OVNI'. Jafari mantuvo su relato públicamente hasta su muerte.",
+      "testigos": ["General Parviz Jafari (piloto del segundo F-4)", "Tripulación del primer F-4", "Controladores de Mehrabad", "Memorando DIA"],
+      "creyente": "Dos tripulaciones militares, fallos de sistemas correlacionados con la aproximación en dos aviones distintos, retorno de radar y un documento de inteligencia estadounidense que lo toma en serio. Si solo pudieras llevarte un caso de los 70, es este.",
+      "esceptico": "Philip Klass y otros analistas apuntaron que esa noche Júpiter brillaba exactamente donde se reportó el objeto, que los F-4 iraníes arrastraban problemas crónicos de mantenimiento eléctrico, y que la tripulación —en tensión y de madrugada— pudo encadenar la avería con el planeta. El 'documento DIA' registra el relato iraní; documentar un testimonio no es validarlo.",
+      "documentos": [
+        {
+          "titulo": "Documentos OVNI desclasificados de agencias de EE.UU. (colección CIA, incluye el material sobre Irán 1976)",
+          "fuente": "CIA FOIA Reading Room",
+          "url": "https://www.cia.gov/readingroom/collection/ufos-fact-or-fiction"
+        }
+      ],
+      "fuentes": [
+        {
+          "titulo": "Espejo de la colección en Internet Archive",
+          "url": "https://archive.org/details/ufos-fact-or-fiction"
+        }
+      ],
+      "relacionados": ["manises-1979", "belgica-1989", "nimitz-2004"]
+    },
+    {
+      "id": "jal1628-1986",
+      "titulo": "JAL 1628 sobre Alaska",
+      "pais": "Estados Unidos",
+      "lugar": "Espacio aéreo de Alaska, ruta a Anchorage",
+      "coordenadas": [64.83, -147.72],
+      "fecha": "1986-11-17",
+      "fechaTexto": "17 de noviembre de 1986",
+      "estado": "disputado",
+      "tipo": ["aviación comercial", "radar"],
+      "empiezaAqui": null,
+      "gancho": "Un carguero 747 japonés, 30 minutos de persecución sobre Alaska y una investigación oficial de la FAA. El capitán dijo que el objeto era dos veces un portaaviones.",
+      "resumen": "La tripulación del vuelo de carga JAL 1628 reportó luces y un objeto de enorme tamaño que les acompañó durante más de media hora sobre Alaska. La FAA abrió investigación y publicó su expediente; el caso mezcla observación visual, radar y mucho debate.",
+      "queOcurrio": "El 17 de noviembre de 1986, el capitán Kenju Terauchi, al mando de un Boeing 747 de carga de Japan Air Lines, reportó al control de Anchorage dos grupos de luces que maniobraban cerca del avión y, después, la silueta de un objeto gigantesco —'dos veces un portaaviones', declaró— que pareció seguirles durante más de 30 minutos. Hubo retornos de radar intermitentes tanto en el avión como en tierra que nunca se correlacionaron de forma concluyente. La FAA investigó durante meses, tomó declaración a la tripulación y liberó el expediente completo; su conclusión fue que no podía confirmar el objeto, y parte de los ecos de radar se atribuyeron a un retorno partido ('split image') del propio 747.",
+      "testigos": ["Cap. Kenju Terauchi", "Copiloto y mecánico de vuelo del JAL 1628", "Controladores de Anchorage (registros FAA)"],
+      "creyente": "Tres tripulantes veteranos, media hora de observación continuada, gestos de evasión autorizados por control y ecos de radar en dos sistemas. John Callahan, jefe de división de la FAA entonces, sostuvo que los datos se llevaron a una reunión con la CIA y que se les dijo que el encuentro 'no había ocurrido'.",
+      "esceptico": "La reconstrucción astronómica es demoledora: Júpiter y Marte brillaban exactamente en la posición de las 'luces' durante toda la ruta, Terauchi era un 'repetidor' de avistamientos (reportó otros antes y después, incluidos reflejos de luces de tierra), y los dos tripulantes restantes nunca vieron la 'nave nodriza', solo luces. El eco de radar partido es un artefacto conocido. Callahan cuenta su historia; el expediente FAA publicado no la respalda.",
+      "documentos": [
+        {
+          "titulo": "Expediente de la investigación de la FAA sobre el JAL 1628 (liberado por FOIA, copias en archivos públicos)",
+          "fuente": "FAA / dominio público EE.UU.",
+          "url": "https://archive.org/details/JAL1628"
+        }
+      ],
+      "fuentes": [],
+      "relacionados": ["nimitz-2004", "manises-1979", "tehran-1976"]
+    },
+    {
+      "id": "belgica-1989",
+      "titulo": "La ola belga de los triángulos",
+      "pais": "Bélgica",
+      "lugar": "Valonia y este de Bélgica (Eupen, Lieja, Wavre...)",
+      "coordenadas": [50.628, 6.036],
+      "fecha": "1989-11-29",
+      "fechaTexto": "Noviembre de 1989 – abril de 1990",
+      "estado": "disputado",
+      "tipo": ["ola de avistamientos", "militar", "radar"],
+      "empiezaAqui": null,
+      "gancho": "Gendarmes como testigos, F-16 despegando de madrugada y una Fuerza Aérea que dio ruedas de prensa con los investigadores civiles. Nunca un gobierno fue tan transparente en caliente.",
+      "resumen": "Durante meses, cientos de testigos —incluidos numerosos gendarmes— reportaron plataformas triangulares silenciosas con luces en los vértices. La noche del 30 al 31 de marzo de 1990, dos F-16 persiguieron contactos de radar sin lograr identificación visual. La Fuerza Aérea belga colaboró abiertamente con los investigadores.",
+      "queOcurrio": "El 29 de noviembre de 1989, decenas de testigos en la zona de Eupen —entre ellos varias parejas de gendarmes de servicio— describieron una plataforma triangular oscura, silenciosa y con potentes focos, volando a baja altura. Los reportes se multiplicaron durante meses. La noche del 30-31 de marzo de 1990, tras detecciones coincidentes de radares en tierra, dos F-16 despegaron y obtuvieron fugazmente bloqueos de radar sobre contactos que mostraban aceleraciones aparentes enormes, sin contacto visual. El general Wilfried De Brouwer, entonces jefe de operaciones de la Fuerza Aérea, compareció públicamente y el ejército colaboró con la asociación civil SOBEPS: un nivel de transparencia institucional inédito. En 2011, el autor de la foto más famosa de la ola (el 'triángulo de Petit-Rechain') confesó que era un montaje con porexpán.",
+      "testigos": ["Múltiples patrullas de gendarmería", "Gen. Wilfried De Brouwer (Fuerza Aérea belga)", "Pilotos de los dos F-16", "Cientos de testigos civiles"],
+      "creyente": "Gendarmes entrenados describiendo lo mismo durante meses, radares militares coincidentes y un general que sigue afirmando hoy que aquello no fue explicado. La confesión de UNA foto falsa no borra cientos de testimonios uniformados.",
+      "esceptico": "El análisis posterior atribuyó los bloqueos de radar de los F-16 a interferencias y ángeles de radar (los propios informes belgas lo reconocen), no hubo ni una foto o vídeo auténtico en meses de 'ola' — la única icónica resultó fraude —, y los triángulos silenciosos encajan con helicópteros y aviones vistos en condiciones nocturnas engañosas, amplificados por el eco mediático. Una ola social, más que aeroespacial.",
+      "documentos": [],
+      "fuentes": [
+        {
+          "titulo": "El caso está referenciado en los archivos y bibliografía oficial belga (informes SOBEPS/Fuerza Aérea); sin repositorio oficial online estable",
+          "url": "https://es.wikipedia.org/wiki/Ola_belga_de_ovnis"
+        }
+      ],
+      "relacionados": ["phoenix-1997", "tehran-1976", "rendlesham-1980"]
     }
   ]
 }
