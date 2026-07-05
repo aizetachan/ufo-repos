@@ -26,8 +26,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      # Solo se publica el sitio: fuera ficheros internos del repo
+      - name: Preparar sitio
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '_site' \
+            --exclude 'README.md' \
+            --exclude 'firebase.json' \
+            --exclude '.firebaserc' \
+            ./ _site/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4

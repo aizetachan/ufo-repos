@@ -1,87 +1,85 @@
-# EXPEDIENTE UMBRA 🛸
-
-Web de divulgación sobre el fenómeno OVNI/UAP con estética de archivo desclasificado.
-Cada caso enlaza a su **documentación oficial original** (expedientes desclasificados del
-Ejército del Aire español, Project Blue Book, AARO, National Archives UK, GEIPAN...).
-
-## Filosofía
-
-- **Estética conspiranoica, contenido veraz**: el envoltorio es un dossier clasificado; los datos son reales y citables.
-- **Modo Creyente / Escéptico**: cada caso tiene sus dos lecturas documentadas. El interruptor de la cabecera cambia entre ellas.
-- **Sin registro, sin cookies de rastreo, sin build**: HTML/CSS/JS puro. Se abre y se lee.
-
-## Estructura
+# 🛸 EXPEDIENTE UMBRA
 
 ```
-index.html              Portada: expediente del día, ruta "Empieza aquí", buscador y listado con filtros
-expediente.html         Ficha de caso (lee ?id= y renderiza desde el JSON, con tooltips de glosario)
-cronologia.html         Línea de tiempo 1947→hoy en doble carril (casos / historia)
-bestiario.html          Guía de arquetipos: qué reporta la gente y de dónde sale cada figura
-mapa.html               Los casos sobre un mapa oscuro (Leaflet autoalojado en assets/vendor/)
-archivo-espanol.html    Los 80 expedientes desclasificados navegables por año
-archivos.html           Sala de archivos: enlaces verificados a las fuentes oficiales
-glosario.html           Glosario del investigador
-reportar.html           Formulario de reporte con control de descartes (guarda solo en local)
-data/casos.json         Los casos con ficha completa (esquema documentado dentro del JSON)
-data/archivo-espanol.json  Los 80 expedientes con enlace al documento original
-data/cronologia.json    Hitos de la cronología
-data/bestiario.json     Entidades del bestiario
-data/glosario.json      Términos y definiciones
-assets/style.css        Estética dossier/X-Files
-assets/app.js           Toda la lógica (sin frameworks)
+┌─────────────────────────────────────────────────┐
+│  ARCHIVO DESCLASIFICADO                         │
+│  LA VERDAD ESTÁ EN LOS DOCUMENTOS               │
+│                                    ┌──────────┐ │
+│  NIVEL DE ACCESO: NO AUTORIZADO    │DESCLASIF.│ │
+│  (pase de todos modos)             └──────────┘ │
+└─────────────────────────────────────────────────┘
 ```
 
-Extra: código Konami (↑↑↓↓←→←→BA) en cualquier página.
+**→ La web: https://aizetachan.github.io/ufo-repos/**
 
-## Añadir un caso
+## Qué es esto
 
-Añade un objeto al array `casos` de `data/casos.json` siguiendo el esquema de cualquier
-caso existente. Campos clave:
+Una plataforma de divulgación sobre el fenómeno OVNI/UAP con estética de dossier
+clasificado y una regla que no se rompe: **cada dato es real y cada afirmación
+enlaza a su documento original**. Expedientes militares desclasificados, informes
+del Pentágono, transcripciones del Congreso — no nos creas a nosotros: cree a los
+documentos.
 
-- `estado`: `explicado` | `disputado` | `sin_explicar`
-- `creyente` / `esceptico`: las dos lecturas del caso
-- `documentos`: enlaces al expediente/documento oficial (¡verifícalos!)
-- `empiezaAqui`: número de orden si forma parte de la ruta para principiantes (o `null`)
+## Qué contiene
 
-## Desarrollo local
+- **18 casos con ficha completa** — de Roswell al Tic-Tac de la Navy, con especial
+  atención a los casos españoles (Manises, Canarias, Talavera...): qué ocurrió,
+  quién lo vio, y el enlace al expediente oficial escaneado.
+- **El interruptor Creyente/Escéptico** — cada caso tiene sus dos lecturas
+  documentadas. Tú eliges bando. O mejor: lee los dos.
+- **El archivo español completo** — los 80 expedientes desclasificados del
+  Ejército del Aire (1962-1995), navegables por año, cada uno enlazado a su PDF
+  en la Biblioteca Virtual del Ministerio de Defensa.
+- **Dossier de la gran ola de 1968-69** — los 25 expedientes de los dos años más
+  intensos del archivo.
+- **Cronología 1947→hoy** en doble carril (casos + historia política y cultural),
+  con los documentos oficiales enlazados hito a hito.
+- **Bestiario** — de dónde sale cada arquetipo (los Grises nacen en 1961, y
+  tenemos el caso). Genealogía cultural, no zoología.
+- **Sala de Archivos** — enlaces verificados a los archivos OVNI oficiales de
+  8 países: España, EE.UU., Reino Unido, Francia, Brasil, Canadá, Australia y Chile.
+- **Mapa, glosario, buscador y canal de reportes** con control de descartes
+  (¿ya comprobaste que no era Starlink?).
+- Un código secreto. Los que crecieron con una consola sabrán encontrarlo.
 
-No hay dependencias. Sirve la carpeta con cualquier servidor estático:
+## Cómo está hecho
+
+HTML, CSS y JavaScript puros. Sin frameworks, sin build, sin cookies, sin registro.
+Se abre y se lee.
+
+```
+index.html              Portada: expediente del día, ruta "Empieza aquí", buscador
+expediente.html         Ficha de caso (renderiza desde el JSON, con glosario integrado)
+cronologia.html         Línea de tiempo en doble carril
+bestiario.html          Los arquetipos y su partida de nacimiento
+ola68.html              Dossier de la gran ola española
+mapa.html               Sala de situación (Leaflet autoalojado)
+archivo-espanol.html    Los 80 expedientes por año
+archivos.html           Sala de archivos: las fuentes oficiales verificadas
+glosario.html           Los términos, sin jerga
+reportar.html           Canal de reporte con control de descartes
+metodologia.html        Cómo trabajamos y qué NO afirmamos
+data/*.json             Todo el contenido, estructurado y versionado
+assets/                 Estética dossier + lógica (app.js)
+```
+
+## Contribuir
+
+Los datos viven en `data/*.json` con el esquema documentado dentro de cada
+fichero. Para añadir un caso: copia la estructura de uno existente, incluye sus
+dos lecturas (creyente y escéptica) y **verifica los enlaces a los documentos**.
+¿Un error, un enlace roto, una fuente mejor? Abre un issue. Corregir rápido y en
+público también es parte del método.
+
+## Desarrollo y publicación
 
 ```bash
+# desarrollo local (el fetch de los JSON necesita HTTP)
 python3 -m http.server 8080
-# → http://localhost:8080
+
+# publicar: push a main y el workflow de Pages hace el resto
 ```
 
-(Abrir `index.html` como fichero no funciona: el `fetch` del JSON necesita HTTP.)
+---
 
-## Despliegue: Firebase Hosting (automático con GitHub Actions)
-
-El repo ya incluye `firebase.json`, `.firebaserc` y el workflow
-`.github/workflows/firebase-deploy.yml`. Cada push a `main` despliega a
-producción; cada pull request genera una URL de preview temporal.
-
-Configuración inicial (una sola vez):
-
-1. **Crear el proyecto**: entra en [console.firebase.google.com](https://console.firebase.google.com)
-   → *Añadir proyecto* → nombre `expediente-umbra` (si Google te sugiere otro ID
-   porque ese está cogido, apunta el ID final). No hace falta activar Analytics.
-2. **Generar la credencial de despliegue**: en la consola del proyecto →
-   ⚙️ *Configuración del proyecto* → *Cuentas de servicio* →
-   *Generar nueva clave privada* (descarga un JSON).
-3. **Añadir el secreto en GitHub**: en el repo → *Settings → Secrets and
-   variables → Actions → New repository secret* → nombre
-   `FIREBASE_SERVICE_ACCOUNT`, valor: el contenido íntegro del JSON descargado.
-   (Borra el JSON de tu disco después.)
-
-Si el ID final del proyecto no es `expediente-umbra`, actualiza ese valor en
-`.firebaserc` y en los dos `projectId` del workflow.
-
-La web quedará en `https://<project-id>.web.app`.
-
-Alternativa manual: `npm i -g firebase-tools && firebase login && firebase deploy`.
-
-## Fuentes y verificación
-
-Los enlaces a archivos oficiales fueron verificados el **05-07-2026**. Los documentos del
-gobierno federal de EE.UU. son de dominio público; para el resto de archivos, esta web
-**enlaza** a los documentos en sus sedes oficiales (no los reproduce).
+*Días desde el último encubrimiento: 0*

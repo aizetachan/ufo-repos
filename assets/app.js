@@ -104,6 +104,7 @@ const SECCIONES_NAV = [
   ["bestiario.html", "bestiario", "Bestiario"],
   ["mapa.html", "mapa", "Mapa"],
   ["archivo-espanol.html", "archivo-espanol", "Archivo español"],
+  ["ola68.html", "ola68", "Dossier: Ola del 68"],
   ["archivos.html", "archivos", "Sala de archivos"],
   ["glosario.html", "glosario", "Glosario"],
   ["reportar.html", "reportar", "Reportar"],
@@ -190,6 +191,7 @@ async function iniciarCronologia() {
         <p>${esc(ev.texto)}</p>
         ${caso ? `<a class="enlace-caso" href="expediente.html?id=${encodeURIComponent(caso.id)}">▸ Abrir expediente</a>` : ""}
         ${ev.url ? `<a class="enlace-caso" href="${esc(ev.url)}" target="_blank" rel="noopener">▸ Ver documento oficial</a>` : ""}
+        ${ev.pagina ? `<a class="enlace-caso" href="${esc(ev.pagina)}">▸ Abrir dossier</a>` : ""}
       </div>`;
   }
   cont.innerHTML = html;
@@ -398,6 +400,22 @@ async function iniciarExpediente() {
   marcarTerminos(document.getElementById("expediente"));
 }
 
+/* ---------- Dossier: ola de 1968-69 ---------- */
+async function iniciarOla68() {
+  const resp = await fetch("data/archivo-espanol.json");
+  const datos = await resp.json();
+  const ola = datos.expedientes.filter((e) => e.anio === 1968 || e.anio === 1969);
+  document.getElementById("expedientes-ola").innerHTML = ola
+    .map(
+      (e) => `
+      <div class="exp-linea" style="border:1px solid var(--linea);margin-bottom:6px">
+        <span><span style="color:var(--fosforo)">${e.anio}</span> · ${esc(e.titulo)}</span>
+        <a class="ver-exp" href="${esc(e.url)}" target="_blank" rel="noopener">VER EXPEDIENTE ▸</a>
+      </div>`
+    )
+    .join("");
+}
+
 /* ---------- Glosario ---------- */
 let _glosario = null;
 async function cargarGlosario() {
@@ -587,6 +605,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (pagina === "cronologia") iniciarCronologia();
   if (pagina === "archivo-espanol") iniciarArchivoEspanol();
   if (pagina === "glosario") iniciarGlosario();
+  if (pagina === "ola68") iniciarOla68();
   if (pagina === "mapa") iniciarMapa();
   if (pagina === "reportar") iniciarReportar();
   iniciarKonami();
