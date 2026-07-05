@@ -30,6 +30,8 @@ body {
   line-height: 1.65;
   min-height: 100vh;
   position: relative;
+  /* Evita que el pull-to-refresh del móvil se coma los swipes del código secreto */
+  overscroll-behavior-y: contain;
 }
 
 /* Grano + scanlines sobre toda la página */

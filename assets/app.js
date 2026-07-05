@@ -511,16 +511,15 @@ function iniciarKonami() {
   const gestos = ["arriba","arriba","abajo","abajo","izquierda","derecha","izquierda","derecha"];
   let posTactil = 0;
   let inicioToque = null;
-  document.addEventListener("touchstart", (e) => {
-    inicioToque = { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() };
-  }, { passive: true });
-  document.addEventListener("touchend", (e) => {
-    if (!inicioToque) return;
-    const dx = e.changedTouches[0].clientX - inicioToque.x;
-    const dy = e.changedTouches[0].clientY - inicioToque.y;
-    const rapido = Date.now() - inicioToque.t < 800;
+  let ultimoPunto = null;
+
+  const evaluarGesto = () => {
+    if (!inicioToque || !ultimoPunto) { inicioToque = null; return; }
+    const dx = ultimoPunto.x - inicioToque.x;
+    const dy = ultimoPunto.y - inicioToque.y;
+    const rapido = Date.now() - inicioToque.t < 1000;
     inicioToque = null;
-    if (!rapido || (Math.abs(dx) < 40 && Math.abs(dy) < 40)) return;
+    if (!rapido || (Math.abs(dx) < 30 && Math.abs(dy) < 30)) return;
     const gesto = Math.abs(dx) > Math.abs(dy)
       ? (dx > 0 ? "derecha" : "izquierda")
       : (dy > 0 ? "abajo" : "arriba");
@@ -529,7 +528,26 @@ function iniciarKonami() {
       posTactil = 0;
       mostrarExpedienteProhibido();
     }
+  };
+
+  document.addEventListener("touchstart", (e) => {
+    inicioToque = { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() };
+    ultimoPunto = { x: inicioToque.x, y: inicioToque.y };
   }, { passive: true });
+  // Seguimos el dedo durante el gesto: así el swipe cuenta aunque el
+  // navegador se quede el evento final (pull-to-refresh, gestos de borde).
+  document.addEventListener("touchmove", (e) => {
+    if (inicioToque) ultimoPunto = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  }, { passive: true });
+  document.addEventListener("touchend", (e) => {
+    if (inicioToque && e.changedTouches.length) {
+      ultimoPunto = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
+    }
+    evaluarGesto();
+  }, { passive: true });
+  // touchcancel: el navegador ha interceptado el gesto (p. ej. pull-to-refresh);
+  // evaluamos con la última posición conocida en vez de descartar el swipe.
+  document.addEventListener("touchcancel", evaluarGesto, { passive: true });
 
   function mostrarExpedienteProhibido() {
     if (document.getElementById("expediente-prohibido")) return;
