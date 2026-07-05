@@ -1,9 +1,10 @@
 name: Desplegar a Firebase Hosting
 
+# NOTA: disparadores de push/PR desactivados hasta que exista el secreto
+# FIREBASE_SERVICE_ACCOUNT en el repo (ver README). Mientras tanto, solo
+# ejecución manual. Para reactivar el despliegue automático, restaurar:
+#   push: { branches: [main] }  y  pull_request:
 on:
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
 
 jobs:
