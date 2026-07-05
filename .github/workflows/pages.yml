@@ -1,11 +1,8 @@
 name: Desplegar a GitHub Pages
 
-# Estrategia: publicar el sitio en la rama gh-pages (GitHub la sirve
-# automáticamente). El intento con actions/deploy-pages falló porque el
-# GITHUB_TOKEN no puede CREAR el sitio de Pages en repos personales.
+# MECANISMO ANTIGUO (rama gh-pages), conservado solo como respaldo manual.
+# El despliegue normal lo hace pages-artifact.yml (origen: GitHub Actions).
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

@@ -3,10 +3,9 @@ name: Pages por artefacto (plan B)
 # Vía alternativa de despliegue: sube el sitio como artefacto y lo publica
 # con actions/deploy-pages, sin pasar por el build interno de la rama
 # gh-pages. Requiere que el origen de Pages sea "GitHub Actions".
-# Desactivado del push: el entorno github-pages solo admite despliegues
-# desde la rama gh-pages mientras el origen de Pages sea "branch".
-# Se reactiva cambiando en Settings->Pages el origen a "GitHub Actions".
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
